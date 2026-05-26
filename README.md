@@ -156,11 +156,11 @@ Our frontend dashboard provides a visual, fully interactive sandbox for tourname
 
 ### 1. Championship Odds (Top Contenders)
 Across our 100,000 baseline Monte Carlo simulations, the top contenders emerged with the following overall trophy odds:
-* **#1 Argentina:** **`19.1%`**
-* **#2 France:** **`14.3%`**
-* **#3 Spain:** **`13.1%`**
-* **#4 Brazil:** **`11.9%`**
-* **#5 England:** **`8.3%`**
+* **#1 France:** **`20.6%`**
+* **#2 Argentina:** **`16.2%`**
+* **#3 Spain:** **`10.5%`**
+* **#4 England:** **`9.8%`**
+* **#5 Brazil:** **`8.4%`**
 
 ### 2. The Baseline Bracket Path
 Under the most likely, deterministic baseline timeline:
