@@ -164,7 +164,7 @@ Across our 100,000 baseline Monte Carlo simulations, the top contenders emerged 
 
 ### 2. The Baseline Bracket Path
 Under the most likely, deterministic baseline timeline:
-* **Round of 32:** Brazil cruises past Japan **2–0**; Argentina draws with Uruguay **1–1** but falls on penalties.
-* **Round of 16:** Portugal edges past Spain **1–0**; Brazil shuts out Senegal **2–0**.
-* **Quarter-finals:** England puts on a masterclass to beat Brazil **4–2**; Uruguay beats Portugal **3–2**.
-* **Final:** **England** beats **Australia** **1–0** to lift the World Cup.
+* **Round of 32:** Sweden pulls off a major upset to eliminate England **2–1** in Match 80; Brazil defeats Japan **2–1** in Match 76.
+* **Round of 16:** Sweden wins a high-scoring thriller against Egypt **4–3** in Match 92; Brazil defeats Ecuador **3–2** in Match 91.
+* **Quarter-finals:** Brazil draws with Sweden **1–1** but advances on penalties in Match 99.
+* **Final:** **Brazil** defeats **Canada** **2–0** in Match 104 to win the World Cup.
