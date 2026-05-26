@@ -5,7 +5,8 @@ import useSWR, { useSWRConfig } from 'swr';
 import StageToggle from '@/components/StageToggle';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
-const fetcher = (url: string) => fetch(`http://localhost:8000${url}`).then(res => res.json());
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+const fetcher = (url: string) => fetch(`${API_BASE}${url}`).then(res => res.json());
 
 const teamsList = [
   "Algeria", "Argentina", "Australia", "Austria", "Belgium", "Bosnia and Herzegovina", "Brazil", 
@@ -96,7 +97,7 @@ export default function StagesPage() {
     const newList = [...filteredList, { team_a: ta, team_b: tb, goals_a: ga, goals_b: gb }];
 
     try {
-      await fetch('http://localhost:8000/api/match_overrides', {
+      await fetch(`${API_BASE}/api/match_overrides`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ overrides: newList })
@@ -117,7 +118,7 @@ export default function StagesPage() {
     const newList = currentList.filter(o => !((o.team_a === ta && o.team_b === tb) || (o.team_a === tb && o.team_b === ta)));
 
     try {
-      await fetch('http://localhost:8000/api/match_overrides', {
+      await fetch(`${API_BASE}/api/match_overrides`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ overrides: newList })
@@ -134,7 +135,7 @@ export default function StagesPage() {
   const handleResetOverrides = async () => {
     setIsSimulating(true);
     try {
-      await fetch('http://localhost:8000/api/match_overrides/reset', { method: 'POST' });
+      await fetch(`${API_BASE}/api/match_overrides/reset`, { method: 'POST' });
       mutateOverrides();
       mutate('/api/dynamic_stage_predictions');
     } catch (e) {

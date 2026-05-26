@@ -7,7 +7,8 @@ import {
   getRenderScore, getLikelyWinner,
 } from '@/lib/predictions';
 
-const fetcher = (url: string) => fetch(`http://localhost:8000${url}`).then(res => res.json());
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+const fetcher = (url: string) => fetch(`${API_BASE}${url}`).then(res => res.json());
 
 interface GroupStanding {
   team: string;
@@ -350,7 +351,7 @@ export default function BracketPage() {
       goals_b: parseInt(goalsB) || 0,
     }];
     try {
-      await fetch('http://localhost:8000/api/match_overrides', {
+      await fetch(`${API_BASE}/api/match_overrides`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ overrides: newList }),
@@ -365,7 +366,7 @@ export default function BracketPage() {
   const handleResetAll = async () => {
     setIsSimulating(true);
     try {
-      await fetch('http://localhost:8000/api/match_overrides/reset', { method: 'POST' });
+      await fetch(`${API_BASE}/api/match_overrides/reset`, { method: 'POST' });
       mutateOverrides();
       mutate('/api/simulation/results');
     } catch (e) { console.error(e); }

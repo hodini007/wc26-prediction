@@ -26,8 +26,9 @@ export default function TeamDeepDive({ params }: PageProps) {
   const teamName = teamRow?.team;
 
   // Fetch Elo Trajectory dynamically from our backend API using conditional SWR key to preserve Hook ordering
+  const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
   const { data: eloData } = useSWR(
-    teamName ? `http://localhost:8000/api/team/${teamName}/elo_trajectory` : null,
+    teamName ? `${API_BASE}/api/team/${teamName}/elo_trajectory` : null,
     fetcher
   );
 
