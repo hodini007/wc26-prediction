@@ -1,0 +1,20 @@
+{
+  "poisson_features_a": [
+    "team_a_form10_goals_scored",
+    "team_b_form10_goals_conceded",
+    "elo_diff",
+    "squad_value_ratio",
+    "neutral_venue",
+    "team_a_top5_pct",
+    "attack_vs_defence"
+  ],
+  "poisson_features_b": [
+    "team_b_form10_goals_scored",
+    "team_a_form10_goals_conceded",
+    "elo_diff",
+    "squad_value_ratio",
+    "neutral_venue",
+    "team_b_top5_pct",
+    "defence_vs_attack"
+  ]
+}

@@ -1,0 +1,44 @@
+# Python caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.ipynb_checkpoints/
+*.ipynb
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# ML models and scalers
+models/*.pkl
+
+# Data files (scraped and processed raw data)
+raw_data/
+processed_data/
+evaluation/plots/
+evaluation/report.json
+simulation/results.json
+
+# Next.js
+web/.next/
+web/node_modules/
+web/out/
+web/public/data/predictions.json
+web/.env.local
+web/.env.production.local
+web/.env.development.local
+web/.env.test.local
+
+# FastAPI / Uvicorn
+.env
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
