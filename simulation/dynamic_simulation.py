@@ -352,10 +352,10 @@ def run_dynamic_simulation(iterations=10000):
             (r32_winners[0], r32_winners[2]),    # Match 90: Winner 73 vs Winner 75
             (r32_winners[3], r32_winners[5]),    # Match 91: Winner 76 vs Winner 78
             (r32_winners[6], r32_winners[7]),    # Match 92: Winner 79 vs Winner 80
-            (r32_winners[8], r32_winners[9]),    # Match 93: Winner 81 vs Winner 82
-            (r32_winners[10], r32_winners[11]),  # Match 94: Winner 83 vs Winner 84
-            (r32_winners[12], r32_winners[13]),  # Match 95: Winner 85 vs Winner 86
-            (r32_winners[14], r32_winners[15])   # Match 96: Winner 87 vs Winner 88
+            (r32_winners[10], r32_winners[11]),  # Match 93: Winner 83 vs Winner 84
+            (r32_winners[8], r32_winners[9]),    # Match 94: Winner 81 vs Winner 82
+            (r32_winners[13], r32_winners[15]),  # Match 95: Winner 86 vs Winner 88
+            (r32_winners[12], r32_winners[14])   # Match 96: Winner 85 vs Winner 87
         ]
         
         r16_winners = []
@@ -380,8 +380,8 @@ def run_dynamic_simulation(iterations=10000):
         # Quarter-finals (Matches 97 to 100)
         qf_pairings = [
             (r16_winners[0], r16_winners[1]),  # Match 97: Winner 89 vs Winner 90
-            (r16_winners[2], r16_winners[3]),  # Match 98: Winner 91 vs Winner 92
-            (r16_winners[4], r16_winners[5]),  # Match 99: Winner 93 vs Winner 94
+            (r16_winners[4], r16_winners[5]),  # Match 98: Winner 93 vs Winner 94
+            (r16_winners[2], r16_winners[3]),  # Match 99: Winner 91 vs Winner 92
             (r16_winners[6], r16_winners[7])   # Match 100: Winner 95 vs Winner 96
         ]
         

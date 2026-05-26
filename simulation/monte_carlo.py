@@ -420,6 +420,7 @@ def main():
             t_3rd = sorted_teams[2]
             thirds_pool.append({
                 'team': t_3rd,
+                'group': g_id,
                 'pts': standings[t_3rd]['pts'],
                 'gd': standings[t_3rd]['gd'],
                 'gs': standings[t_3rd]['gs'],
@@ -432,52 +433,108 @@ def main():
             return (item['pts'], item['gd'], item['gs'], -item['fifa_rank'])
             
         thirds_pool = sorted(thirds_pool, key=thirds_key, reverse=True)
-        best_thirds = [item['team'] for item in thirds_pool[:8]]
+        best_thirds_data = thirds_pool[:8]
         
-        # Round of 32 qualified teams
-        r32_teams = auto_qualifiers + best_thirds
+        # Greedily match 3rd-place teams to winners of groups E, I, A, L, D, G, B, K
+        winner_groups_needing_thirds = ['E', 'I', 'A', 'L', 'D', 'G', 'B', 'K']
+        third_place_assignments = {}
+        available_thirds = list(best_thirds_data)
         
+        for w_gp in winner_groups_needing_thirds:
+            assigned_third = None
+            for t_data in available_thirds:
+                if t_data['group'] != w_gp:
+                    assigned_third = t_data
+                    break
+            if not assigned_third and available_thirds:
+                assigned_third = available_thirds[0]
+            if assigned_third:
+                third_place_assignments[w_gp] = assigned_third['team']
+                available_thirds.remove(assigned_third)
+
+        # Reconstruct group stage winners and runners-up maps
+        winners = {}
+        runners_up = {}
+        for idx, g_id in enumerate(groups.keys()):
+            winners[g_id] = auto_qualifiers[idx*2]
+            runners_up[g_id] = auto_qualifiers[idx*2 + 1]
+
+        best_thirds = [x['team'] for x in best_thirds_data]
+        r32_teams = [w for w in winners.values()] + [r for r in runners_up.values()] + best_thirds
         for t in r32_teams:
             counts['qualify'][t] += 1
             counts['r32'][t] += 1
 
         # 3. Simulate Knockout Rounds: R32 -> R16 -> QF -> SF -> Final
-        bracket = r32_teams[:]
-        
-        # Round of 32
-        next_round = []
-        for i in range(0, 32, 2):
-            winner, _, _, _ = simulate_match(bracket[i], bracket[i+1], matchups_cache, knockout=True)
-            next_round.append(winner)
+        # Knockout rounds using exact FIFA 2026 Bracket pairings
+        r32_matches = [
+            (runners_up['A'], runners_up['B']),                             # Match 73
+            (winners['E'], third_place_assignments.get('E', 'TBD')),       # Match 74
+            (winners['F'], runners_up['C']),                               # Match 75
+            (winners['C'], runners_up['F']),                               # Match 76
+            (winners['I'], third_place_assignments.get('I', 'TBD')),       # Match 77
+            (runners_up['E'], runners_up['I']),                             # Match 78
+            (winners['A'], third_place_assignments.get('A', 'TBD')),       # Match 79
+            (winners['L'], third_place_assignments.get('L', 'TBD')),       # Match 80
+            (winners['D'], third_place_assignments.get('D', 'TBD')),       # Match 81
+            (winners['G'], third_place_assignments.get('G', 'TBD')),       # Match 82
+            (winners['B'], third_place_assignments.get('B', 'TBD')),       # Match 83
+            (runners_up['D'], runners_up['G']),                             # Match 84
+            (winners['J'], runners_up['H']),                               # Match 85
+            (winners['K'], third_place_assignments.get('K', 'TBD')),       # Match 86
+            (runners_up['K'], runners_up['L']),                             # Match 87
+            (winners['H'], runners_up['J'])                                # Match 88
+        ]
+
+        r32_winners = []
+        for a, b in r32_matches:
+            winner, _, _, _ = simulate_match(a, b, matchups_cache, knockout=True)
+            r32_winners.append(winner)
             counts['r16'][winner] += 1
-        bracket = next_round
-        
-        # Round of 16
-        next_round = []
-        for i in range(0, 16, 2):
-            winner, _, _, _ = simulate_match(bracket[i], bracket[i+1], matchups_cache, knockout=True)
-            next_round.append(winner)
+
+        # Round of 16 (Matches 89 to 96)
+        r16_pairings = [
+            (r32_winners[1], r32_winners[4]),    # Match 89: Winner 74 vs Winner 77
+            (r32_winners[0], r32_winners[2]),    # Match 90: Winner 73 vs Winner 75
+            (r32_winners[3], r32_winners[5]),    # Match 91: Winner 76 vs Winner 78
+            (r32_winners[6], r32_winners[7]),    # Match 92: Winner 79 vs Winner 80
+            (r32_winners[10], r32_winners[11]),  # Match 93: Winner 83 vs Winner 84
+            (r32_winners[8], r32_winners[9]),    # Match 94: Winner 81 vs Winner 82
+            (r32_winners[13], r32_winners[15]),  # Match 95: Winner 86 vs Winner 88
+            (r32_winners[12], r32_winners[14])   # Match 96: Winner 85 vs Winner 87
+        ]
+        r16_winners = []
+        for a, b in r16_pairings:
+            winner, _, _, _ = simulate_match(a, b, matchups_cache, knockout=True)
+            r16_winners.append(winner)
             counts['qf'][winner] += 1
-        bracket = next_round
-        
-        # Quarter-final
-        next_round = []
-        for i in range(0, 8, 2):
-            winner, _, _, _ = simulate_match(bracket[i], bracket[i+1], matchups_cache, knockout=True)
-            next_round.append(winner)
+
+        # Quarter-finals (Matches 97 to 100)
+        qf_pairings = [
+            (r16_winners[0], r16_winners[1]),  # Match 97: Winner 89 vs Winner 90
+            (r16_winners[4], r16_winners[5]),  # Match 98: Winner 93 vs Winner 94
+            (r16_winners[2], r16_winners[3]),  # Match 99: Winner 91 vs Winner 92
+            (r16_winners[6], r16_winners[7])   # Match 100: Winner 95 vs Winner 96
+        ]
+        qf_winners = []
+        for a, b in qf_pairings:
+            winner, _, _, _ = simulate_match(a, b, matchups_cache, knockout=True)
+            qf_winners.append(winner)
             counts['sf'][winner] += 1
-        bracket = next_round
-        
-        # Semi-final
-        next_round = []
-        for i in range(0, 4, 2):
-            winner, _, _, _ = simulate_match(bracket[i], bracket[i+1], matchups_cache, knockout=True)
-            next_round.append(winner)
+
+        # Semi-finals (Matches 101 to 102)
+        sf_pairings = [
+            (qf_winners[0], qf_winners[1]),  # Match 101: Winner 97 vs Winner 98
+            (qf_winners[2], qf_winners[3])   # Match 102: Winner 99 vs Winner 100
+        ]
+        sf_winners = []
+        for a, b in sf_pairings:
+            winner, _, _, _ = simulate_match(a, b, matchups_cache, knockout=True)
+            sf_winners.append(winner)
             counts['finalist'][winner] += 1
-        bracket = next_round
-        
-        # Final
-        champion, _, _, _ = simulate_match(bracket[0], bracket[1], matchups_cache, knockout=True)
+
+        # Final (Match 104)
+        champion, _, _, _ = simulate_match(sf_winners[0], sf_winners[1], matchups_cache, knockout=True)
         counts['champion'][champion] += 1
 
     end_time = time.time()
