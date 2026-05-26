@@ -19,12 +19,20 @@ export default function TeamDeepDive({ params }: PageProps) {
   
   const { data, error } = useSWR("/data/predictions.json", fetcher);
 
-  if (error) return <div className="text-center py-12 text-red-500 font-bold">Failed to load prediction data.</div>;
-  if (!data) return <div className="text-center py-12 text-gray-400 font-medium">Loading team profile...</div>;
-
-  const teamRow = data.teams.find((t: any) => 
+  // Safely find the team row and team name if data is loaded, for dependent fetching
+  const teamRow = data?.teams?.find((t: any) => 
     t.team.toLowerCase().replace(/ /g, "-") === slug.toLowerCase()
   );
+  const teamName = teamRow?.team;
+
+  // Fetch Elo Trajectory dynamically from our backend API using conditional SWR key to preserve Hook ordering
+  const { data: eloData } = useSWR(
+    teamName ? `http://localhost:8000/api/team/${teamName}/elo_trajectory` : null,
+    fetcher
+  );
+
+  if (error) return <div className="text-center py-12 text-red-500 font-bold">Failed to load prediction data.</div>;
+  if (!data) return <div className="text-center py-12 text-gray-400 font-medium">Loading team profile...</div>;
 
   if (!teamRow) {
     return (
@@ -43,9 +51,6 @@ export default function TeamDeepDive({ params }: PageProps) {
   const sfProb = data.sf_probability[team] || 0.0;
   const qfProb = data.qf_probability[team] || 0.0;
   const qualifyProb = data.qualify_probability[team] || 0.0;
-
-  // Fetch Elo Trajectory dynamically from our new backend API!
-  const { data: eloData } = useSWR(`http://localhost:8000/api/team/${team}/elo_trajectory`, fetcher);
 
   const trajectoryPoints = eloData?.trajectory ? [
     { name: 'Group Stage', ELO: eloData.trajectory.group },
