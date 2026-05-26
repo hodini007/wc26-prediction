@@ -3,21 +3,7 @@
 import { useState } from "react";
 import useSWR from "swr";
 
-const flags: { [key: string]: string } = {
-  "Argentina": "🇦🇷", "Brazil": "🇧🇷", "France": "🇫🇷", "Spain": "🇪🇸", "England": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-  "Portugal": "🇵🇹", "Netherlands": "🇳🇱", "Italy": "🇮🇹", "Belgium": "🇧🇪", "Germany": "🇩🇪",
-  "Uruguay": "🇺🇾", "Croatia": "🇭🇷", "Colombia": "🇨🇴", "Japan": "🇯🇵", "Morocco": "🇲🇦",
-  "USA": "🇺🇸", "Senegal": "🇸🇳", "South Korea": "🇰🇷", "Mexico": "🇲🇽", "Iran": "🇮🇷",
-  "Ukraine": "🇺🇦", "Turkey": "🇹🇷", "Austria": "🇦🇹", "Denmark": "🇩🇰", "Switzerland": "🇨🇭",
-  "Ecuador": "🇪🇨", "Nigeria": "🇳🇬", "Canada": "🇨🇦", "Ivory Coast": "🇨🇮", "Australia": "🇦🇺",
-  "Algeria": "🇩🇿", "Egypt": "🇪🇬", "Tunisia": "🇹🇳", "Cameroon": "🇨🇲", "Paraguay": "🇵🇾",
-  "Venezuela": "🇻🇪", "Poland": "🇵🇱", "Hungary": "🇭🇺", "Ghana": "🇬🇭", "Uzbekistan": "🇺🇿",
-  "Iraq": "🇮🇶", "Saudi Arabia": "🇸🇦", "Qatar": "🇶🇦", "Panama": "🇵🇦", "Costa Rica": "🇨🇷",
-  "Jamaica": "🇯🇲", "South Africa": "🇿🇦", "New Zealand": "🇳🇿",
-  "Norway": "🇳🇴", "Scotland": "🏴󠁧󠁢󠁳󠁣󠁴󠁿", "Haiti": "🇭🇹", "Curaçao": "🇨🇼", "Cape Verde": "🇨🇻",
-  "Jordan": "🇯🇴", "Czechia": "🇨🇿", "Bosnia and Herzegovina": "🇧🇦", "Türkiye": "🇹🇷", "Sweden": "🇸🇪",
-  "DR Congo": "🇨🇩"
-};
+
 
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
@@ -83,7 +69,6 @@ export default function Groups() {
                   </thead>
                   <tbody className="divide-y divide-gray-800/30">
                     {teamStats.map((teamRow: any) => {
-                      const flag = flags[teamRow.team] || "🏳️";
                       const qualProb = teamRow.qualification_probability;
                       
                       // Color coding rows based on qualification likelihood
@@ -103,7 +88,6 @@ export default function Groups() {
                       return (
                         <tr key={teamRow.team} className={`${rowBg} transition-colors`}>
                           <td className="py-2.5 font-bold flex items-center gap-1.5 text-white">
-                            <span className="text-base">{flag}</span>
                             <span className="truncate">{teamRow.team}</span>
                           </td>
                           <td className="py-2.5 font-bold text-center text-gray-300">{teamRow.avg_points.toFixed(1)}</td>
@@ -127,21 +111,17 @@ export default function Groups() {
                   {matchPredictions
                     .filter((m: any) => m.group === gId)
                     .map((match: any) => {
-                      const flagA = flags[match.team_a] || "🏳️";
-                      const flagB = flags[match.team_b] || "🏳️";
                       return (
                         <div key={match.match_id} className="p-3 rounded-lg border border-[#1f2937] bg-[#111827]/70 space-y-2">
                           <div className="flex items-center justify-between text-xs font-bold text-white">
                             <div className="flex items-center gap-1.5">
-                              <span>{flagA}</span>
-                              <span className="truncate max-w-[80px]">{match.team_a}</span>
+                              <span className="truncate max-w-[100px]">{match.team_a}</span>
                             </div>
                             <span className="text-[10px] text-gray-400 font-extrabold px-1.5 py-0.5 rounded bg-gray-800">
                               {match.expected_goals_a.toFixed(1)} - {match.expected_goals_b.toFixed(1)} xG
                             </span>
                             <div className="flex items-center gap-1.5">
-                              <span className="truncate max-w-[80px] text-right">{match.team_b}</span>
-                              <span>{flagB}</span>
+                              <span className="truncate max-w-[100px] text-right">{match.team_b}</span>
                             </div>
                           </div>
                           

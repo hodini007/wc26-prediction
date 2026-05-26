@@ -3,21 +3,7 @@
 import { useState } from "react";
 import useSWR from "swr";
 
-const flags: { [key: string]: string } = {
-  "Argentina": "🇦🇷", "Brazil": "🇧🇷", "France": "🇫🇷", "Spain": "🇪🇸", "England": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-  "Portugal": "🇵🇹", "Netherlands": "🇳🇱", "Italy": "🇮🇹", "Belgium": "🇧🇪", "Germany": "🇩🇪",
-  "Uruguay": "🇺🇾", "Croatia": "🇭🇷", "Colombia": "🇨🇴", "Japan": "🇯🇵", "Morocco": "🇲🇦",
-  "USA": "🇺🇸", "Senegal": "🇸🇳", "South Korea": "🇰🇷", "Mexico": "🇲🇽", "Iran": "🇮🇷",
-  "Ukraine": "🇺🇦", "Turkey": "🇹🇷", "Austria": "🇦🇹", "Denmark": "🇩🇰", "Switzerland": "🇨🇭",
-  "Ecuador": "🇪🇨", "Nigeria": "🇳🇬", "Canada": "🇨🇦", "Ivory Coast": "🇨🇮", "Australia": "🇦🇺",
-  "Algeria": "🇩🇿", "Egypt": "🇪🇬", "Tunisia": "🇹🇳", "Cameroon": "🇨🇲", "Paraguay": "🇵🇾",
-  "Venezuela": "🇻🇪", "Poland": "🇵🇱", "Hungary": "🇭🇺", "Ghana": "🇬🇭", "Uzbekistan": "🇺🇿",
-  "Iraq": "🇮🇶", "Saudi Arabia": "🇸🇦", "Qatar": "🇶🇦", "Panama": "🇵🇦", "Costa Rica": "🇨🇷",
-  "Jamaica": "🇯🇲", "South Africa": "🇿🇦", "New Zealand": "🇳🇿",
-  "Norway": "🇳🇴", "Scotland": "🏴󠁧󠁢󠁳󠁣󠁴󠁿", "Haiti": "🇭🇹", "Curaçao": "🇨🇼", "Cape Verde": "🇨🇻",
-  "Jordan": "🇯🇴", "Czechia": "🇨🇿", "Bosnia and Herzegovina": "🇧🇦", "Türkiye": "🇹🇷", "Sweden": "🇸🇪",
-  "DR Congo": "🇨🇩"
-};
+
 
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
@@ -26,6 +12,7 @@ export default function Matches() {
   const { data, error } = useSWR("/data/predictions.json", fetcher);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedGroup, setSelectedGroup] = useState<string>("All");
+  const [expandedMatch, setExpandedMatch] = useState<string | null>(null);
 
   if (error) return <div className="text-center py-12 text-red-500 font-bold">Failed to load prediction data.</div>;
   if (!data) return <div className="text-center py-12 text-gray-400 font-medium">Loading match predictor...</div>;
@@ -86,8 +73,6 @@ export default function Matches() {
       {/* Matches Grid */}
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {filteredMatches.map((match: any) => {
-          const flagA = flags[match.team_a] || "🏳️";
-          const flagB = flags[match.team_b] || "🏳️";
           
           // Determine confidence rating
           const maxProb = Math.max(match.p_win, match.p_loss);
@@ -113,9 +98,8 @@ export default function Matches() {
 
               {/* Match Head-to-Head */}
               <div className="flex items-center justify-between text-center gap-2">
-                <div className="flex flex-col items-center flex-1 max-w-[100px]">
-                  <span className="text-4xl">{flagA}</span>
-                  <p className="font-bold text-white text-sm mt-1.5 truncate w-full">{match.team_a}</p>
+                <div className="flex flex-col items-center flex-1 max-w-[120px]">
+                  <p className="font-bold text-white text-sm truncate w-full">{match.team_a}</p>
                 </div>
                 <div className="text-center flex-shrink-0">
                   <span className="text-[10px] text-gray-500 font-extrabold uppercase tracking-widest block">Expected Score</span>
@@ -123,9 +107,8 @@ export default function Matches() {
                     {match.expected_goals_a.toFixed(1)} - {match.expected_goals_b.toFixed(1)}
                   </span>
                 </div>
-                <div className="flex flex-col items-center flex-1 max-w-[100px]">
-                  <span className="text-4xl">{flagB}</span>
-                  <p className="font-bold text-white text-sm mt-1.5 truncate w-full">{match.team_b}</p>
+                <div className="flex flex-col items-center flex-1 max-w-[120px]">
+                  <p className="font-bold text-white text-sm truncate w-full">{match.team_b}</p>
                 </div>
               </div>
 
@@ -166,6 +149,61 @@ export default function Matches() {
                     </span>
                   ))}
                 </div>
+              </div>
+
+              {/* Collapsible AI Prediction Insights */}
+              <div className="pt-3 border-t border-gray-800/50">
+                <button
+                  onClick={() => setExpandedMatch(expandedMatch === match.match_id ? null : match.match_id)}
+                  className="w-full flex items-center justify-between text-[10px] font-black text-blue-500 uppercase tracking-widest hover:opacity-80 transition focus:outline-none"
+                >
+                  <span>🧠 AI Prediction Insights</span>
+                  <span>{expandedMatch === match.match_id ? '▼' : '▶'}</span>
+                </button>
+                
+                {expandedMatch === match.match_id && (
+                  <div className="mt-3 space-y-3 bg-[#0a0e1a] p-3 rounded-lg border border-gray-800 text-xs transition-all duration-300">
+                    <div className="space-y-1.5">
+                      <div className="flex justify-between text-[10px] font-bold text-gray-300">
+                        <span>Elo Rating Base Strength (40%)</span>
+                        <span className="text-blue-400">Favors {match.p_win > match.p_loss ? match.team_a : match.team_b}</span>
+                      </div>
+                      <div className="h-1.5 w-full bg-gray-800 rounded-full overflow-hidden">
+                        <div className="h-full bg-blue-500 rounded-full" style={{ width: '40%' }} />
+                      </div>
+                    </div>
+
+                    <div className="space-y-1.5">
+                      <div className="flex justify-between text-[10px] font-bold text-gray-300">
+                        <span>Poisson Expected Goal Rate (25%)</span>
+                        <span className="text-green-400">Favors {match.expected_goals_a > match.expected_goals_b ? match.team_a : match.team_b}</span>
+                      </div>
+                      <div className="h-1.5 w-full bg-gray-800 rounded-full overflow-hidden">
+                        <div className="h-full bg-green-500 rounded-full" style={{ width: '25%' }} />
+                      </div>
+                    </div>
+
+                    <div className="space-y-1.5">
+                      <div className="flex justify-between text-[10px] font-bold text-gray-300">
+                        <span>Squad Value & Quality (20%)</span>
+                        <span className="text-violet-400 font-extrabold">Favors {match.p_win > match.p_loss ? match.team_a : match.team_b}</span>
+                      </div>
+                      <div className="h-1.5 w-full bg-gray-800 rounded-full overflow-hidden">
+                        <div className="h-full bg-violet-500 rounded-full" style={{ width: '20%' }} />
+                      </div>
+                    </div>
+
+                    <div className="space-y-1.5">
+                      <div className="flex justify-between text-[10px] font-bold text-gray-300">
+                        <span>Historic Pedigree & Experience (15%)</span>
+                        <span className="text-amber-400">Favors {match.p_win > match.p_loss ? match.team_a : match.team_b}</span>
+                      </div>
+                      <div className="h-1.5 w-full bg-gray-800 rounded-full overflow-hidden">
+                        <div className="h-full bg-amber-500 rounded-full" style={{ width: '15%' }} />
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           );

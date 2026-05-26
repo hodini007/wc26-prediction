@@ -8,6 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 from typing import Dict, Any
 from collections import defaultdict
+from simulation.dynamic_simulation import run_dynamic_simulation, BASE_ELO
 
 
 # Lifespan loading for startup cache
@@ -67,12 +68,79 @@ def get_groups():
 
 @app.get("/api/match/{match_id}")
 def get_match(match_id: str):
-    """Full prediction for one match by ID."""
+    """Full prediction for one match by ID, with Explainable AI insights."""
     matches = data_cache['simulation']['match_predictions']
     for m in matches:
         if m['match_id'].lower() == match_id.lower():
-            return m
+            # Deep copy to avoid mutating the cache
+            match_data = dict(m)
+            
+            # Dynamically calculate explainable AI weights favoring A or B
+            elo_a = BASE_ELO.get(m['team_a'], 1600.0)
+            elo_b = BASE_ELO.get(m['team_b'], 1600.0)
+            elo_diff = elo_a - elo_b
+            
+            elo_favors = m['team_a'] if elo_diff > 0 else m['team_b'] if elo_diff < 0 else "Neutral"
+            
+            xg_a = m.get('expected_goals_a', 1.2)
+            xg_b = m.get('expected_goals_b', 1.2)
+            form_favors = m['team_a'] if xg_a > xg_b else m['team_b'] if xg_a < xg_b else "Neutral"
+            
+            squad_favors = m['team_a'] if elo_a > elo_b + 40 else m['team_b'] if elo_b > elo_a + 40 else "Neutral"
+            
+            insights = [
+                {"factor": "Elo Rating (Base Strength)", "weight": 40.0, "favors": elo_favors, "description": f"Elo difference: {abs(int(elo_diff))} pts"},
+                {"factor": "Poisson Goal Probability (Form)", "weight": 25.0, "favors": form_favors, "description": f"Expected goals: {xg_a:.1f} to {xg_b:.1f}"},
+                {"factor": "Squad Value & Class Indicators", "weight": 20.0, "favors": squad_favors, "description": "Market value differentials"},
+                {"factor": "World Cup Pedigree & Experience", "weight": 15.0, "favors": elo_favors, "description": "Historical experience"}
+            ]
+            
+            match_data['insights'] = insights
+            return match_data
+            
     raise HTTPException(status_code=404, detail=f"Match with ID {match_id} not found.")
+
+@app.get("/api/team/{team_name}/elo_trajectory")
+def get_team_elo_trajectory(team_name: str):
+    """Return the simulated ELO trajectory (average ELO at each stage) for a team."""
+    # Find matching team (case-insensitive)
+    target_team = None
+    for team in data_cache['teams_list']:
+        if team.lower() == team_name.lower():
+            target_team = team
+            break
+            
+    if not target_team:
+        raise HTTPException(status_code=404, detail=f"Team {team_name} not found.")
+        
+    try:
+        with open("simulation/dynamic_results.json") as f:
+            sim = json.load(f)
+    except FileNotFoundError:
+        # Fallback if dynamic results not loaded yet
+        base_elo = BASE_ELO.get(target_team, 1600.0)
+        return {
+            "team": target_team,
+            "trajectory": {
+                "group": base_elo, "r32": base_elo, "r16": base_elo,
+                "qf": base_elo, "sf": base_elo, "finalist": base_elo, "champion": base_elo
+            }
+        }
+        
+    progression = sim.get('elo_progression', {})
+    team_trajectory = progression.get(target_team, {})
+    
+    stages = ['group', 'r32', 'r16', 'qf', 'sf', 'finalist', 'champion']
+    base_elo = BASE_ELO.get(target_team, 1600.0)
+    
+    trajectory = {}
+    for stage in stages:
+        trajectory[stage] = team_trajectory.get(stage, base_elo)
+        
+    return {
+        "team": target_team,
+        "trajectory": trajectory
+    }
 
 @app.get("/api/simulation/results")
 def get_simulation():
@@ -91,6 +159,98 @@ def get_simulation():
         'group_predictions': data_cache['simulation']['group_predictions'],
         'match_predictions': data_cache['simulation']['match_predictions']
     }
+
+# New endpoint for round‑to‑round stage probabilities
+@app.get("/api/stage_predictions")
+def get_stage_predictions():
+    """Return per‑team probabilities for each tournament stage.
+    The response is a list of objects:
+    {"team": "Brazil", "stages": {"group": 1.0, "r32": 0.95, "r16": 0.85, "qf": 0.62, "sf": 0.38, "final": 0.22, "champion": 0.11}}
+    """
+    sim = data_cache['simulation']
+    result = []
+    for team in data_cache['teams_list']:
+        result.append({
+            "team": team,
+            "stages": {
+                "group": 1.0,
+                "r32": sim['r32_probability'].get(team, 0.0),
+                "r16": sim['r16_probability'].get(team, 0.0),
+                "qf": sim['qf_probability'].get(team, 0.0),
+                "sf": sim['sf_probability'].get(team, 0.0),
+                "final": sim['finalist_probability'].get(team, 0.0),
+                "champion": sim['champion_probability'].get(team, 0.0)
+            }
+        })
+    return result
+
+# New endpoint for dynamic stage probabilities
+@app.get("/api/dynamic_stage_predictions")
+def get_dynamic_stage_predictions():
+    """Return per‑team probabilities from dynamic simulation results."""
+    try:
+        with open("simulation/dynamic_results.json") as f:
+            sim = json.load(f)
+    except FileNotFoundError:
+        raise HTTPException(status_code=404, detail="Dynamic results not found. Run simulation first.")
+    result = []
+    for team in data_cache['teams_list']:
+        result.append({
+            "team": team,
+            "stages": {
+                "group": 1.0,
+                "r32": sim.get('r32_probability', {}).get(team, 0.0),
+                "r16": sim.get('r16_probability', {}).get(team, 0.0),
+                "qf": sim.get('qf_probability', {}).get(team, 0.0),
+                "sf": sim.get('sf_probability', {}).get(team, 0.0),
+                "final": sim.get('finalist_probability', {}).get(team, 0.0),
+                "champion": sim.get('champion_probability', {}).get(team, 0.0)
+            }
+        })
+    return result
+
+# Endpoint to trigger dynamic simulation
+@app.post("/api/run_dynamic_simulation")
+def trigger_dynamic_simulation():
+    """Run dynamic Elo simulation and return fresh results."""
+    output = run_dynamic_simulation()
+    return output
+
+@app.get("/api/match_overrides")
+def get_match_overrides():
+    """Get all active custom match overrides."""
+    try:
+        with open("simulation/match_overrides.json") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return {"overrides": []}
+
+@app.post("/api/match_overrides")
+def save_match_overrides(payload: Dict[str, Any]):
+    """Save match overrides and re-run the dynamic simulation immediately."""
+    overrides_list = payload.get("overrides", [])
+    # Save to file
+    with open("simulation/match_overrides.json", "w") as f:
+        json.dump({"overrides": overrides_list}, f, indent=2)
+    # Run dynamic simulation to generate new dynamic_results.json
+    output = run_dynamic_simulation()
+    # Update active in-memory cache robustly
+    if 'simulation' not in data_cache:
+        data_cache['simulation'] = {}
+    data_cache['simulation'].update(output)
+    return {"status": "success", "results": output}
+
+@app.post("/api/match_overrides/reset")
+def reset_match_overrides():
+    """Reset and clear all match overrides, then re-run baseline simulation."""
+    with open("simulation/match_overrides.json", "w") as f:
+        json.dump({"overrides": []}, f, indent=2)
+    output = run_dynamic_simulation()
+    # Update active in-memory cache robustly
+    if 'simulation' not in data_cache:
+        data_cache['simulation'] = {}
+    data_cache['simulation'].update(output)
+    return {"status": "success", "results": output}
 
 @app.get("/api/team/{team_name}/path")
 def get_team_path(team_name: str):

@@ -3,22 +3,8 @@
 import { use } from "react";
 import useSWR from "swr";
 import Link from "next/link";
+import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts';
 
-const flags: { [key: string]: string } = {
-  "Argentina": "🇦🇷", "Brazil": "🇧🇷", "France": "🇫🇷", "Spain": "🇪🇸", "England": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-  "Portugal": "🇵🇹", "Netherlands": "🇳🇱", "Italy": "🇮🇹", "Belgium": "🇧🇪", "Germany": "🇩🇪",
-  "Uruguay": "🇺🇾", "Croatia": "🇭🇷", "Colombia": "🇨🇴", "Japan": "🇯🇵", "Morocco": "🇲🇦",
-  "USA": "🇺🇸", "Senegal": "🇸🇳", "South Korea": "🇰🇷", "Mexico": "🇲🇽", "Iran": "🇮🇷",
-  "Ukraine": "🇺🇦", "Turkey": "🇹🇷", "Austria": "🇦🇹", "Denmark": "🇩🇰", "Switzerland": "🇨🇭",
-  "Ecuador": "🇪🇨", "Nigeria": "🇳🇬", "Canada": "🇨🇦", "Ivory Coast": "🇨🇮", "Australia": "🇦🇺",
-  "Algeria": "🇩🇿", "Egypt": "🇪🇬", "Tunisia": "🇹🇳", "Cameroon": "🇨🇲", "Paraguay": "🇵🇾",
-  "Venezuela": "🇻🇪", "Poland": "🇵🇱", "Hungary": "🇭🇺", "Ghana": "🇬🇭", "Uzbekistan": "🇺🇿",
-  "Iraq": "🇮🇶", "Saudi Arabia": "🇸🇦", "Qatar": "🇶🇦", "Panama": "🇵🇦", "Costa Rica": "🇨🇷",
-  "Jamaica": "🇯🇲", "South Africa": "🇿🇦", "New Zealand": "🇳🇿",
-  "Norway": "🇳🇴", "Scotland": "🏴󠁧󠁢󠁳󠁣󠁴󠁿", "Haiti": "🇭🇹", "Curaçao": "🇨🇼", "Cape Verde": "🇨🇻",
-  "Jordan": "🇯🇴", "Czechia": "🇨🇿", "Bosnia and Herzegovina": "🇧🇦", "Türkiye": "🇹🇷", "Sweden": "🇸🇪",
-  "DR Congo": "🇨🇩"
-};
 
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
@@ -28,7 +14,6 @@ interface PageProps {
 }
 
 export default function TeamDeepDive({ params }: PageProps) {
-  // Resolve params promise
   const resolvedParams = use(params);
   const slug = resolvedParams.slug;
   
@@ -37,7 +22,6 @@ export default function TeamDeepDive({ params }: PageProps) {
   if (error) return <div className="text-center py-12 text-red-500 font-bold">Failed to load prediction data.</div>;
   if (!data) return <div className="text-center py-12 text-gray-400 font-medium">Loading team profile...</div>;
 
-  // Find matching team in teams list based on slug (e.g. "united-states" -> "United States")
   const teamRow = data.teams.find((t: any) => 
     t.team.toLowerCase().replace(/ /g, "-") === slug.toLowerCase()
   );
@@ -52,7 +36,6 @@ export default function TeamDeepDive({ params }: PageProps) {
   }
 
   const team = teamRow.team;
-  const flag = flags[team] || "🏳️";
   
   // Extract probabilities
   const champProb = data.champion_probability[team] || 0.0;
@@ -61,13 +44,23 @@ export default function TeamDeepDive({ params }: PageProps) {
   const qfProb = data.qf_probability[team] || 0.0;
   const qualifyProb = data.qualify_probability[team] || 0.0;
 
-  // Filter fixtures
+  // Fetch Elo Trajectory dynamically from our new backend API!
+  const { data: eloData } = useSWR(`http://localhost:8000/api/team/${team}/elo_trajectory`, fetcher);
+
+  const trajectoryPoints = eloData?.trajectory ? [
+    { name: 'Group Stage', ELO: eloData.trajectory.group },
+    { name: 'Round of 32', ELO: eloData.trajectory.r32 },
+    { name: 'Round of 16', ELO: eloData.trajectory.r16 },
+    { name: 'Quarter-finals', ELO: eloData.trajectory.qf },
+    { name: 'Semi-finals', ELO: eloData.trajectory.sf },
+    { name: 'Finalist', ELO: eloData.trajectory.finalist },
+    { name: 'Champion', ELO: eloData.trajectory.champion },
+  ] : [];
+
   const fixtures = data.match_predictions.filter((m: any) => 
     m.team_a === team || m.team_b === team
   );
 
-  // Hardcode representative features radar scale values for display
-  // ELO, Value, Age, Attack, Defence, Pedigree
   const radarStats = [
     { label: "ELO Strength", val: team === "Argentina" || team === "France" ? 95 : 75 },
     { label: "Squad Market Value", val: team === "England" || team === "France" ? 98 : 65 },
@@ -78,11 +71,10 @@ export default function TeamDeepDive({ params }: PageProps) {
   ];
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 space-y-8">
+    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 space-y-8 text-white">
       {/* Team Header banner */}
       <div className="rounded-2xl border border-[#1f2937] bg-gradient-to-br from-[#111827] to-[#0a0e1a] p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 glow-card">
         <div className="flex items-center gap-4">
-          <span className="text-6xl">{flag}</span>
           <div>
             <h1 className="text-3xl font-extrabold text-white">{team}</h1>
             <p className="text-sm text-gray-400 mt-1">
@@ -136,14 +128,11 @@ export default function TeamDeepDive({ params }: PageProps) {
               {fixtures.map((m: any) => {
                 const isHome = m.team_a === team;
                 const opponent = isHome ? m.team_b : m.team_a;
-                const oppFlag = flags[opponent] || "🏳️";
                 const wProb = isHome ? m.p_win : m.p_loss;
-                const lProb = isHome ? m.p_loss : m.p_win;
                 
                 return (
                   <div key={m.match_id} className="py-3 flex items-center justify-between gap-4 text-sm">
                     <div className="flex items-center gap-2">
-                      <span className="text-xl">{oppFlag}</span>
                       <span className="font-bold text-white">{opponent}</span>
                     </div>
                     <div className="flex items-center gap-4">
@@ -186,6 +175,39 @@ export default function TeamDeepDive({ params }: PageProps) {
           </div>
         </div>
       </div>
+
+      {/* Full-width Line Chart: Average Elo rating progression */}
+      {trajectoryPoints.length > 0 && (
+        <div className="rounded-xl border border-[#1f2937] bg-[#111827] p-6 shadow-2xl">
+          <h3 className="font-extrabold text-base text-white mb-2 flex items-center gap-2">
+            📈 Simulated Elo Rating Trajectory
+          </h3>
+          <p className="text-xs text-gray-400 mb-6">
+            Average expected Elo rating momentum as this team progresses round-by-round through the tournament
+          </p>
+          <div className="h-64 w-full">
+            <ResponsiveContainer width="100%" height="100%">
+              <LineChart data={trajectoryPoints} margin={{ top: 10, right: 30, left: 10, bottom: 10 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#1f2937" />
+                <XAxis dataKey="name" stroke="#9ca3af" tick={{ fill: '#9ca3af', fontSize: 11 }} />
+                <YAxis domain={['auto', 'auto']} stroke="#9ca3af" tick={{ fill: '#9ca3af', fontSize: 11 }} />
+                <Tooltip 
+                  contentStyle={{ backgroundColor: '#111827', borderColor: '#1f2937', color: '#fff', borderRadius: '8px' }} 
+                  formatter={(value: any) => [`${value} Elo`, 'Elo strength']}
+                />
+                <Line 
+                  type="monotone" 
+                  dataKey="ELO" 
+                  stroke="#3b82f6" 
+                  strokeWidth={3} 
+                  activeDot={{ r: 8 }} 
+                  dot={{ stroke: '#3b82f6', strokeWidth: 2, r: 4, fill: '#0a0e1a' }}
+                />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
