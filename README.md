@@ -8,6 +8,19 @@ An end-to-end Machine Learning prediction engine and high-fidelity Monte Carlo t
 
 Our prediction system is divided into five logical layers, ensuring separation of concerns between raw data ingestion, model training, tournament simulation, and interactive visual representation:
 
+```mermaid
+graph TD
+    A[Scrapers & Crawlers] -->|Raw CSV Data| B[(Data Cache / Raw CSVs)]
+    B -->|Preprocessing & ELO Replay| C[Feature Engineering Engine]
+    C -->|Rolling Averages & Pedigree Features| D[Model Training & Tuning]
+    D -->|Serialized Models scaler/xgb/poisson| E[Monte Carlo Simulator 100k Runs]
+    E -->|JSON predictions/standings| F[FastAPI Backend Server]
+    F -->|REST API JSON data| G[Next.js Interactive Dashboard]
+    G -->|Click Match & Input Goals| H[Interactive Override Controller]
+    H -->|Save Overrides POST| F
+    F -->|Re-Run Dynamic Simulation| F
+```
+
 ```
 DATA LAYER (Scrapers & CSV caches)
   ├── scrapers/           - Modular web crawlers (Matches, Rankings, Transfermarkt, Wikipedia)
@@ -59,6 +72,29 @@ To completely train the models, run the simulations, and deploy the application,
 Our prediction engine uses a blended ensemble composed of:
 1. **XGBoost Classifier (60% weight):** An optimized gradient-boosted decision tree classifier tuned using **Optuna** over 100 hyperparameter trials. It specializes in predicting the overall match outcome (Win, Draw, or Loss) based on ELO gap, FIFA ranks, squad values, and historical titles.
 2. **Poisson Scoreline Regression (40% weight):** Predicts the exact goal distribution for each team using expected goal rates ($\lambda$). 
+
+```mermaid
+graph TD
+    A[Match Input: Team A vs Team B] --> B[Retrieve Features]
+    B --> C[Elo Ratings]
+    B --> D[FIFA Ranks & Points]
+    B --> E[Squad Market Value SDC]
+    B --> F[Rolling Form Form10]
+    B --> G[WC Pedigree & History]
+
+    C & D & E & F & G --> H[Feature Vector]
+    H --> I[XGBoost Classifier 60% Weight]
+    H --> J[Poisson Goal Regression 40% Weight]
+
+    I -->|W/D/L Probability| K[Match Outcome Resolver]
+    J -->|Expected Goal Rates lambdaA / lambdaB| L[Poisson Goal Sampler]
+
+    K & L --> M[Goal Count Generator]
+    M -->|Goal Count Draw?| N{Knockout Match?}
+    N -->|Yes| O[Elo-Weighted Penalty Shootout]
+    N -->|No| P[Match Draw Outcome]
+    O --> Q[Advancing Winner]
+```
 
 ### Expected Goals Scaling ($\lambda$)
 Expected goals are derived by scaling a baseline scoring rate against the Elo differential between the competing nations:
@@ -132,15 +168,3 @@ Under the most likely, deterministic baseline timeline:
 * **Round of 16:** Portugal edges past Spain **1–0**; Brazil shuts out Senegal **2–0**.
 * **Quarter-finals:** England puts on a masterclass to beat Brazil **4–2**; Uruguay beats Portugal **3–2**.
 * **Final:** **England** beats **Australia** **1–0** to lift the World Cup.
-
-### 3. Case Study: Anatomy of a Mathematical Upset (Germany vs. Ivory Coast)
-Our deterministic model predicts a **2–1 victory for Ivory Coast** over Germany in Group E, demonstrating the Poisson sampler's high-variance dynamics:
-* **Expected Goal Rates:** Germany has higher expected goals ($\lambda = 1.62$) compared to Ivory Coast ($\lambda = 0.98$).
-* **Germany Sampler Loop ($L = 0.19790$):**
-  * *Iteration 1:* Generates `0.846` (cumulative `0.846 > 0.197`) $\rightarrow$ **Scores 1 goal**.
-  * *Iteration 2:* Generates a cold-streak value `0.025` (cumulative product drops to `0.021 < 0.197`) $\rightarrow$ Loop halts.
-* **Ivory Coast Sampler Loop ($L = 0.37531$):**
-  * *Iteration 1:* Generates `0.868` (cumulative `0.868 > 0.375`) $\rightarrow$ **Scores 1 goal**.
-  * *Iteration 2:* Generates `0.873` (cumulative product `0.758 > 0.375`) $\rightarrow$ **Scores 2 goals**.
-  * *Iteration 3:* Generates `0.475` (cumulative product drops to `0.360 < 0.375`) $\rightarrow$ Loop halts.
-* **Outcome:** Despite Germany's superior roster depth and Elo strength, Ivory Coast pulls off a clinical **2–1 upset**.
