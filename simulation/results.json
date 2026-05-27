@@ -1,0 +1,3122 @@
+{
+  "n_simulations": 100000,
+  "timestamp": "2026-05-26T21:16:45.202949",
+  "format": "12 groups of 4, top 2 + best 8 thirds advance, R32 to Final",
+  "champion_probability": {
+    "France": 0.2061,
+    "Argentina": 0.1623,
+    "Spain": 0.105,
+    "England": 0.0979,
+    "Brazil": 0.0836,
+    "Belgium": 0.0608,
+    "Netherlands": 0.0467,
+    "Portugal": 0.0467,
+    "Germany": 0.0302,
+    "Uruguay": 0.0209,
+    "Morocco": 0.0205,
+    "Croatia": 0.0165,
+    "Colombia": 0.0151,
+    "Japan": 0.0135,
+    "USA": 0.012,
+    "Switzerland": 0.008,
+    "Senegal": 0.0061,
+    "South Korea": 0.0054,
+    "Sweden": 0.0053,
+    "Mexico": 0.0048,
+    "Norway": 0.0045,
+    "Iran": 0.0045,
+    "T\u00fcrkiye": 0.0034,
+    "Canada": 0.0026,
+    "Ecuador": 0.0026,
+    "Australia": 0.0021,
+    "Austria": 0.002,
+    "Czechia": 0.0019,
+    "Ivory Coast": 0.0019,
+    "Egypt": 0.0018,
+    "Scotland": 0.0014,
+    "Paraguay": 0.0008,
+    "Algeria": 0.0007,
+    "Tunisia": 0.0005,
+    "Ghana": 0.0004,
+    "Bosnia and Herzegovina": 0.0003,
+    "Qatar": 0.0003,
+    "DR Congo": 0.0002,
+    "South Africa": 0.0002,
+    "Saudi Arabia": 0.0001,
+    "Uzbekistan": 0.0001,
+    "Panama": 0.0001,
+    "Iraq": 0.0001,
+    "Cape Verde": 0.0,
+    "Jordan": 0.0,
+    "New Zealand": 0.0,
+    "Haiti": 0.0
+  },
+  "finalist_probability": {
+    "France": 0.3364,
+    "Argentina": 0.2377,
+    "Spain": 0.1707,
+    "England": 0.1667,
+    "Brazil": 0.1552,
+    "Belgium": 0.1475,
+    "Netherlands": 0.1042,
+    "Portugal": 0.0882,
+    "Germany": 0.0771,
+    "Morocco": 0.0556,
+    "Uruguay": 0.0464,
+    "USA": 0.0438,
+    "Croatia": 0.0404,
+    "Japan": 0.0379,
+    "Colombia": 0.0355,
+    "Switzerland": 0.0316,
+    "South Korea": 0.0198,
+    "Senegal": 0.0198,
+    "Iran": 0.0193,
+    "Mexico": 0.0179,
+    "Sweden": 0.0176,
+    "Norway": 0.0164,
+    "T\u00fcrkiye": 0.016,
+    "Canada": 0.0127,
+    "Ecuador": 0.0116,
+    "Australia": 0.0108,
+    "Egypt": 0.0089,
+    "Czechia": 0.0089,
+    "Ivory Coast": 0.0086,
+    "Austria": 0.0071,
+    "Scotland": 0.0063,
+    "Paraguay": 0.0052,
+    "Algeria": 0.0033,
+    "Qatar": 0.0025,
+    "Bosnia and Herzegovina": 0.0024,
+    "Tunisia": 0.0023,
+    "Ghana": 0.002,
+    "South Africa": 0.0011,
+    "DR Congo": 0.0011,
+    "Uzbekistan": 0.0009,
+    "Saudi Arabia": 0.0008,
+    "Iraq": 0.0005,
+    "Panama": 0.0005,
+    "Cape Verde": 0.0002,
+    "Jordan": 0.0001,
+    "New Zealand": 0.0001,
+    "Haiti": 0.0001,
+    "Cura\u00e7ao": 0.0
+  },
+  "sf_probability": {
+    "France": 0.4552,
+    "Argentina": 0.3471,
+    "Belgium": 0.3176,
+    "England": 0.3144,
+    "Brazil": 0.2821,
+    "Spain": 0.2725,
+    "Netherlands": 0.1864,
+    "Portugal": 0.1644,
+    "Germany": 0.1481,
+    "USA": 0.1285,
+    "Morocco": 0.1215,
+    "Croatia": 0.1069,
+    "Uruguay": 0.0986,
+    "Switzerland": 0.0918,
+    "Japan": 0.091,
+    "Colombia": 0.082,
+    "Iran": 0.0694,
+    "Senegal": 0.0618,
+    "South Korea": 0.0577,
+    "T\u00fcrkiye": 0.0575,
+    "Mexico": 0.0554,
+    "Norway": 0.052,
+    "Sweden": 0.0507,
+    "Canada": 0.0442,
+    "Australia": 0.0425,
+    "Egypt": 0.0389,
+    "Ecuador": 0.0384,
+    "Ivory Coast": 0.032,
+    "Czechia": 0.0305,
+    "Paraguay": 0.0244,
+    "Austria": 0.0234,
+    "Scotland": 0.0225,
+    "Algeria": 0.0129,
+    "Bosnia and Herzegovina": 0.0116,
+    "Qatar": 0.0114,
+    "Tunisia": 0.0101,
+    "Ghana": 0.0088,
+    "DR Congo": 0.0063,
+    "South Africa": 0.0063,
+    "Uzbekistan": 0.0054,
+    "Saudi Arabia": 0.0052,
+    "Iraq": 0.0041,
+    "Panama": 0.0033,
+    "New Zealand": 0.0016,
+    "Jordan": 0.0014,
+    "Cape Verde": 0.0014,
+    "Haiti": 0.0007,
+    "Cura\u00e7ao": 0.0001
+  },
+  "qf_probability": {
+    "France": 0.6173,
+    "Argentina": 0.5154,
+    "England": 0.5135,
+    "Spain": 0.4763,
+    "Brazil": 0.469,
+    "Belgium": 0.4624,
+    "Netherlands": 0.3589,
+    "Portugal": 0.3395,
+    "Morocco": 0.276,
+    "Germany": 0.2678,
+    "USA": 0.2493,
+    "Uruguay": 0.2413,
+    "Croatia": 0.2366,
+    "Switzerland": 0.2204,
+    "Colombia": 0.2104,
+    "Japan": 0.2052,
+    "Iran": 0.1798,
+    "South Korea": 0.1668,
+    "Mexico": 0.1603,
+    "Senegal": 0.1484,
+    "T\u00fcrkiye": 0.1409,
+    "Canada": 0.1334,
+    "Norway": 0.1304,
+    "Sweden": 0.1293,
+    "Egypt": 0.1165,
+    "Australia": 0.1131,
+    "Ecuador": 0.1074,
+    "Czechia": 0.1022,
+    "Ivory Coast": 0.0922,
+    "Austria": 0.0814,
+    "Scotland": 0.0773,
+    "Paraguay": 0.0742,
+    "Algeria": 0.05,
+    "Bosnia and Herzegovina": 0.0478,
+    "Qatar": 0.0472,
+    "Tunisia": 0.0357,
+    "Ghana": 0.0338,
+    "South Africa": 0.0313,
+    "DR Congo": 0.0275,
+    "Saudi Arabia": 0.023,
+    "Uzbekistan": 0.023,
+    "Iraq": 0.0172,
+    "Panama": 0.016,
+    "New Zealand": 0.0104,
+    "Jordan": 0.0095,
+    "Cape Verde": 0.008,
+    "Haiti": 0.0047,
+    "Cura\u00e7ao": 0.0021
+  },
+  "r16_probability": {
+    "France": 0.8165,
+    "England": 0.7421,
+    "Argentina": 0.7034,
+    "Spain": 0.6967,
+    "Portugal": 0.6894,
+    "Belgium": 0.6795,
+    "Brazil": 0.6563,
+    "Germany": 0.5988,
+    "Colombia": 0.5359,
+    "Netherlands": 0.5198,
+    "Croatia": 0.5114,
+    "USA": 0.4848,
+    "Switzerland": 0.4685,
+    "Morocco": 0.4636,
+    "Uruguay": 0.4457,
+    "South Korea": 0.4447,
+    "Mexico": 0.4411,
+    "Iran": 0.38,
+    "Senegal": 0.3745,
+    "Japan": 0.3609,
+    "Canada": 0.3528,
+    "Norway": 0.3396,
+    "Ecuador": 0.3376,
+    "T\u00fcrkiye": 0.323,
+    "Czechia": 0.3175,
+    "Ivory Coast": 0.3059,
+    "Egypt": 0.2912,
+    "Australia": 0.2801,
+    "Sweden": 0.2651,
+    "Austria": 0.2152,
+    "Paraguay": 0.2095,
+    "Scotland": 0.1996,
+    "Bosnia and Herzegovina": 0.1795,
+    "Qatar": 0.1727,
+    "Algeria": 0.1514,
+    "South Africa": 0.1419,
+    "Ghana": 0.1351,
+    "DR Congo": 0.1311,
+    "Uzbekistan": 0.1109,
+    "Tunisia": 0.1036,
+    "Saudi Arabia": 0.0891,
+    "Iraq": 0.0788,
+    "Panama": 0.0772,
+    "New Zealand": 0.0482,
+    "Jordan": 0.0436,
+    "Cape Verde": 0.042,
+    "Haiti": 0.0255,
+    "Cura\u00e7ao": 0.0189
+  },
+  "r32_probability": {
+    "Argentina": 0.994,
+    "Spain": 0.9858,
+    "France": 0.9829,
+    "Brazil": 0.9786,
+    "England": 0.9747,
+    "Germany": 0.9663,
+    "Belgium": 0.9652,
+    "Portugal": 0.954,
+    "Uruguay": 0.9291,
+    "Morocco": 0.9079,
+    "Netherlands": 0.9033,
+    "Croatia": 0.8935,
+    "Colombia": 0.8851,
+    "Switzerland": 0.8586,
+    "USA": 0.8576,
+    "Mexico": 0.8217,
+    "Ecuador": 0.8193,
+    "South Korea": 0.8121,
+    "Iran": 0.7933,
+    "Ivory Coast": 0.7907,
+    "Japan": 0.7896,
+    "Canada": 0.7816,
+    "Senegal": 0.7178,
+    "Austria": 0.7162,
+    "Egypt": 0.7053,
+    "T\u00fcrkiye": 0.6863,
+    "Czechia": 0.6787,
+    "Norway": 0.6742,
+    "Sweden": 0.6701,
+    "Australia": 0.643,
+    "Scotland": 0.6043,
+    "Algeria": 0.5964,
+    "Bosnia and Herzegovina": 0.5568,
+    "Paraguay": 0.553,
+    "Qatar": 0.5337,
+    "Ghana": 0.4333,
+    "DR Congo": 0.4324,
+    "South Africa": 0.4285,
+    "Saudi Arabia": 0.3915,
+    "Uzbekistan": 0.373,
+    "Tunisia": 0.3621,
+    "Panama": 0.3013,
+    "Iraq": 0.2644,
+    "Jordan": 0.2592,
+    "Cape Verde": 0.2442,
+    "New Zealand": 0.2226,
+    "Haiti": 0.1588,
+    "Cura\u00e7ao": 0.1482
+  },
+  "qualify_probability": {
+    "Argentina": 0.994,
+    "Spain": 0.9858,
+    "France": 0.9829,
+    "Brazil": 0.9786,
+    "England": 0.9747,
+    "Germany": 0.9663,
+    "Belgium": 0.9652,
+    "Portugal": 0.954,
+    "Uruguay": 0.9291,
+    "Morocco": 0.9079,
+    "Netherlands": 0.9033,
+    "Croatia": 0.8935,
+    "Colombia": 0.8851,
+    "Switzerland": 0.8586,
+    "USA": 0.8576,
+    "Mexico": 0.8217,
+    "Ecuador": 0.8193,
+    "South Korea": 0.8121,
+    "Iran": 0.7933,
+    "Ivory Coast": 0.7907,
+    "Japan": 0.7896,
+    "Canada": 0.7816,
+    "Senegal": 0.7178,
+    "Austria": 0.7162,
+    "Egypt": 0.7053,
+    "T\u00fcrkiye": 0.6863,
+    "Czechia": 0.6787,
+    "Norway": 0.6742,
+    "Sweden": 0.6701,
+    "Australia": 0.643,
+    "Scotland": 0.6043,
+    "Algeria": 0.5964,
+    "Bosnia and Herzegovina": 0.5568,
+    "Paraguay": 0.553,
+    "Qatar": 0.5337,
+    "Ghana": 0.4333,
+    "DR Congo": 0.4324,
+    "South Africa": 0.4285,
+    "Saudi Arabia": 0.3915,
+    "Uzbekistan": 0.373,
+    "Tunisia": 0.3621,
+    "Panama": 0.3013,
+    "Iraq": 0.2644,
+    "Jordan": 0.2592,
+    "Cape Verde": 0.2442,
+    "New Zealand": 0.2226,
+    "Haiti": 0.1588,
+    "Cura\u00e7ao": 0.1482
+  },
+  "group_predictions": {
+    "A": [
+      {
+        "team": "Mexico",
+        "avg_points": 4.93,
+        "avg_goal_diff": 1.18,
+        "avg_goals_scored": 4.47,
+        "qualification_probability": 0.6532
+      },
+      {
+        "team": "South Korea",
+        "avg_points": 4.9,
+        "avg_goal_diff": 1.14,
+        "avg_goals_scored": 4.51,
+        "qualification_probability": 0.6397
+      },
+      {
+        "team": "Czechia",
+        "avg_points": 3.95,
+        "avg_goal_diff": -0.2,
+        "avg_goals_scored": 3.7,
+        "qualification_probability": 0.4597
+      },
+      {
+        "team": "South Africa",
+        "avg_points": 2.72,
+        "avg_goal_diff": -2.12,
+        "avg_goals_scored": 2.99,
+        "qualification_probability": 0.2474
+      }
+    ],
+    "B": [
+      {
+        "team": "Switzerland",
+        "avg_points": 5.29,
+        "avg_goal_diff": 1.72,
+        "avg_goals_scored": 4.98,
+        "qualification_probability": 0.7156
+      },
+      {
+        "team": "Canada",
+        "avg_points": 4.64,
+        "avg_goal_diff": 0.74,
+        "avg_goals_scored": 4.27,
+        "qualification_probability": 0.6019
+      },
+      {
+        "team": "Bosnia and Herzegovina",
+        "avg_points": 3.35,
+        "avg_goal_diff": -1.13,
+        "avg_goals_scored": 3.4,
+        "qualification_probability": 0.3504
+      },
+      {
+        "team": "Qatar",
+        "avg_points": 3.22,
+        "avg_goal_diff": -1.33,
+        "avg_goals_scored": 3.33,
+        "qualification_probability": 0.3321
+      }
+    ],
+    "C": [
+      {
+        "team": "Brazil",
+        "avg_points": 6.78,
+        "avg_goal_diff": 4.3,
+        "avg_goals_scored": 6.41,
+        "qualification_probability": 0.9092
+      },
+      {
+        "team": "Morocco",
+        "avg_points": 5.35,
+        "avg_goal_diff": 1.97,
+        "avg_goals_scored": 5.13,
+        "qualification_probability": 0.7467
+      },
+      {
+        "team": "Scotland",
+        "avg_points": 3.34,
+        "avg_goal_diff": -1.37,
+        "avg_goals_scored": 3.56,
+        "qualification_probability": 0.2881
+      },
+      {
+        "team": "Haiti",
+        "avg_points": 1.38,
+        "avg_goal_diff": -4.89,
+        "avg_goals_scored": 1.86,
+        "qualification_probability": 0.056
+      }
+    ],
+    "D": [
+      {
+        "team": "USA",
+        "avg_points": 5.3,
+        "avg_goal_diff": 1.73,
+        "avg_goals_scored": 4.91,
+        "qualification_probability": 0.7163
+      },
+      {
+        "team": "T\u00fcrkiye",
+        "avg_points": 4.04,
+        "avg_goal_diff": -0.1,
+        "avg_goals_scored": 3.84,
+        "qualification_probability": 0.4875
+      },
+      {
+        "team": "Australia",
+        "avg_points": 3.78,
+        "avg_goal_diff": -0.49,
+        "avg_goals_scored": 3.69,
+        "qualification_probability": 0.4432
+      },
+      {
+        "team": "Paraguay",
+        "avg_points": 3.34,
+        "avg_goal_diff": -1.14,
+        "avg_goals_scored": 3.38,
+        "qualification_probability": 0.353
+      }
+    ],
+    "E": [
+      {
+        "team": "Germany",
+        "avg_points": 6.47,
+        "avg_goal_diff": 3.71,
+        "avg_goals_scored": 6.0,
+        "qualification_probability": 0.8617
+      },
+      {
+        "team": "Ecuador",
+        "avg_points": 4.59,
+        "avg_goal_diff": 0.8,
+        "avg_goals_scored": 4.57,
+        "qualification_probability": 0.5649
+      },
+      {
+        "team": "Ivory Coast",
+        "avg_points": 4.39,
+        "avg_goal_diff": 0.46,
+        "avg_goals_scored": 4.41,
+        "qualification_probability": 0.5135
+      },
+      {
+        "team": "Cura\u00e7ao",
+        "avg_points": 1.33,
+        "avg_goal_diff": -4.97,
+        "avg_goals_scored": 1.99,
+        "qualification_probability": 0.0598
+      }
+    ],
+    "F": [
+      {
+        "team": "Netherlands",
+        "avg_points": 5.71,
+        "avg_goal_diff": 2.36,
+        "avg_goals_scored": 5.23,
+        "qualification_probability": 0.7766
+      },
+      {
+        "team": "Japan",
+        "avg_points": 4.6,
+        "avg_goal_diff": 0.71,
+        "avg_goals_scored": 4.35,
+        "qualification_probability": 0.5943
+      },
+      {
+        "team": "Sweden",
+        "avg_points": 3.86,
+        "avg_goal_diff": -0.4,
+        "avg_goals_scored": 3.79,
+        "qualification_probability": 0.4384
+      },
+      {
+        "team": "Tunisia",
+        "avg_points": 2.39,
+        "avg_goal_diff": -2.67,
+        "avg_goals_scored": 2.72,
+        "qualification_probability": 0.1907
+      }
+    ],
+    "G": [
+      {
+        "team": "Belgium",
+        "avg_points": 6.6,
+        "avg_goal_diff": 3.91,
+        "avg_goals_scored": 6.23,
+        "qualification_probability": 0.886
+      },
+      {
+        "team": "Iran",
+        "avg_points": 4.47,
+        "avg_goal_diff": 0.56,
+        "avg_goals_scored": 4.33,
+        "qualification_probability": 0.5665
+      },
+      {
+        "team": "Egypt",
+        "avg_points": 3.93,
+        "avg_goal_diff": -0.35,
+        "avg_goals_scored": 3.9,
+        "qualification_probability": 0.4447
+      },
+      {
+        "team": "New Zealand",
+        "avg_points": 1.73,
+        "avg_goal_diff": -4.12,
+        "avg_goals_scored": 2.31,
+        "qualification_probability": 0.1028
+      }
+    ],
+    "H": [
+      {
+        "team": "Spain",
+        "avg_points": 7.02,
+        "avg_goal_diff": 4.83,
+        "avg_goals_scored": 6.76,
+        "qualification_probability": 0.9453
+      },
+      {
+        "team": "Uruguay",
+        "avg_points": 5.6,
+        "avg_goal_diff": 2.45,
+        "avg_goals_scored": 5.65,
+        "qualification_probability": 0.8194
+      },
+      {
+        "team": "Saudi Arabia",
+        "avg_points": 2.46,
+        "avg_goal_diff": -3.05,
+        "avg_goals_scored": 2.82,
+        "qualification_probability": 0.1509
+      },
+      {
+        "team": "Cape Verde",
+        "avg_points": 1.82,
+        "avg_goal_diff": -4.23,
+        "avg_goals_scored": 2.27,
+        "qualification_probability": 0.0845
+      }
+    ],
+    "I": [
+      {
+        "team": "France",
+        "avg_points": 7.11,
+        "avg_goal_diff": 4.79,
+        "avg_goals_scored": 6.77,
+        "qualification_probability": 0.9359
+      },
+      {
+        "team": "Senegal",
+        "avg_points": 3.98,
+        "avg_goal_diff": -0.35,
+        "avg_goals_scored": 3.89,
+        "qualification_probability": 0.4954
+      },
+      {
+        "team": "Norway",
+        "avg_points": 3.76,
+        "avg_goal_diff": -0.7,
+        "avg_goals_scored": 3.84,
+        "qualification_probability": 0.4402
+      },
+      {
+        "team": "Iraq",
+        "avg_points": 1.9,
+        "avg_goal_diff": -3.74,
+        "avg_goals_scored": 2.27,
+        "qualification_probability": 0.1284
+      }
+    ],
+    "J": [
+      {
+        "team": "Argentina",
+        "avg_points": 7.67,
+        "avg_goal_diff": 6.13,
+        "avg_goals_scored": 7.8,
+        "qualification_probability": 0.9719
+      },
+      {
+        "team": "Austria",
+        "avg_points": 3.95,
+        "avg_goal_diff": -0.58,
+        "avg_goals_scored": 3.87,
+        "qualification_probability": 0.5202
+      },
+      {
+        "team": "Algeria",
+        "avg_points": 3.36,
+        "avg_goal_diff": -1.6,
+        "avg_goals_scored": 3.43,
+        "qualification_probability": 0.3744
+      },
+      {
+        "team": "Jordan",
+        "avg_points": 1.88,
+        "avg_goal_diff": -3.95,
+        "avg_goals_scored": 2.12,
+        "qualification_probability": 0.1335
+      }
+    ],
+    "K": [
+      {
+        "team": "Portugal",
+        "avg_points": 6.32,
+        "avg_goal_diff": 3.28,
+        "avg_goals_scored": 5.53,
+        "qualification_probability": 0.8726
+      },
+      {
+        "team": "Colombia",
+        "avg_points": 5.32,
+        "avg_goal_diff": 1.84,
+        "avg_goals_scored": 5.11,
+        "qualification_probability": 0.7452
+      },
+      {
+        "team": "DR Congo",
+        "avg_points": 2.64,
+        "avg_goal_diff": -2.31,
+        "avg_goals_scored": 2.77,
+        "qualification_probability": 0.2054
+      },
+      {
+        "team": "Uzbekistan",
+        "avg_points": 2.4,
+        "avg_goal_diff": -2.82,
+        "avg_goals_scored": 2.77,
+        "qualification_probability": 0.1768
+      }
+    ],
+    "L": [
+      {
+        "team": "England",
+        "avg_points": 6.77,
+        "avg_goal_diff": 4.26,
+        "avg_goals_scored": 6.47,
+        "qualification_probability": 0.9185
+      },
+      {
+        "team": "Croatia",
+        "avg_points": 5.29,
+        "avg_goal_diff": 1.8,
+        "avg_goals_scored": 5.06,
+        "qualification_probability": 0.7598
+      },
+      {
+        "team": "Ghana",
+        "avg_points": 2.66,
+        "avg_goal_diff": -2.57,
+        "avg_goals_scored": 2.96,
+        "qualification_probability": 0.1965
+      },
+      {
+        "team": "Panama",
+        "avg_points": 2.06,
+        "avg_goal_diff": -3.5,
+        "avg_goals_scored": 2.39,
+        "qualification_probability": 0.1252
+      }
+    ]
+  },
+  "match_predictions": [
+    {
+      "match_id": "A1",
+      "group": "A",
+      "team_a": "Mexico",
+      "team_b": "South Africa",
+      "p_win": 0.5706570568803375,
+      "p_draw": 0.2503250305642214,
+      "p_loss": 0.17901791255544103,
+      "expected_goals_a": 1.7752328443965089,
+      "expected_goals_b": 0.9114245037981832,
+      "top_scorelines": [
+        [
+          "1-0",
+          0.1221
+        ],
+        [
+          "1-1",
+          0.1113
+        ],
+        [
+          "2-0",
+          0.1084
+        ],
+        [
+          "2-1",
+          0.0988
+        ],
+        [
+          "0-0",
+          0.0688
+        ]
+      ]
+    },
+    {
+      "match_id": "A2",
+      "group": "A",
+      "team_a": "Mexico",
+      "team_b": "South Korea",
+      "p_win": 0.38420000672340393,
+      "p_draw": 0.27549999952316284,
+      "p_loss": 0.3402999937534332,
+      "expected_goals_a": 1.3149732891526051,
+      "expected_goals_b": 1.307796272029233,
+      "top_scorelines": [
+        [
+          "1-1",
+          0.1254
+        ],
+        [
+          "1-0",
+          0.0959
+        ],
+        [
+          "0-1",
+          0.0954
+        ],
+        [
+          "2-1",
+          0.0825
+        ],
+        [
+          "1-2",
+          0.082
+        ]
+      ]
+    },
+    {
+      "match_id": "A3",
+      "group": "A",
+      "team_a": "Mexico",
+      "team_b": "Czechia",
+      "p_win": 0.47429999709129333,
+      "p_draw": 0.2583000063896179,
+      "p_loss": 0.26739999651908875,
+      "expected_goals_a": 1.3904349434381362,
+      "expected_goals_b": 1.0752291365866686,
+      "top_scorelines": [
+        [
+          "1-1",
+          0.1275
+        ],
+        [
+          "1-0",
+          0.1186
+        ],
+        [
+          "0-1",
+          0.0917
+        ],
+        [
+          "2-1",
+          0.0886
+        ],
+        [
+          "0-0",
+          0.0853
+        ]
+      ]
+    },
+    {
+      "match_id": "A4",
+      "group": "A",
+      "team_a": "South Africa",
+      "team_b": "South Korea",
+      "p_win": 0.20589999854564667,
+      "p_draw": 0.22259999811649323,
+      "p_loss": 0.5715000033378601,
+      "expected_goals_a": 0.991382727635631,
+      "expected_goals_b": 1.7682330848699837,
+      "top_scorelines": [
+        [
+          "0-1",
+          0.1131
+        ],
+        [
+          "1-1",
+          0.1121
+        ],
+        [
+          "0-2",
+          0.1
+        ],
+        [
+          "1-2",
+          0.0991
+        ],
+        [
+          "0-0",
+          0.064
+        ]
+      ]
+    },
+    {
+      "match_id": "A5",
+      "group": "A",
+      "team_a": "South Africa",
+      "team_b": "Czechia",
+      "p_win": 0.31540000438690186,
+      "p_draw": 0.25189998745918274,
+      "p_loss": 0.4327000081539154,
+      "expected_goals_a": 1.0886231528219923,
+      "expected_goals_b": 1.5641433876329618,
+      "top_scorelines": [
+        [
+          "1-1",
+          0.1207
+        ],
+        [
+          "0-1",
+          0.1109
+        ],
+        [
+          "1-2",
+          0.0944
+        ],
+        [
+          "0-2",
+          0.0867
+        ],
+        [
+          "1-0",
+          0.0772
+        ]
+      ]
+    },
+    {
+      "match_id": "A6",
+      "group": "A",
+      "team_a": "South Korea",
+      "team_b": "Czechia",
+      "p_win": 0.47084709084003473,
+      "p_draw": 0.25842583235107475,
+      "p_loss": 0.2707270768088905,
+      "expected_goals_a": 1.430069671824329,
+      "expected_goals_b": 1.0674519565009795,
+      "top_scorelines": [
+        [
+          "1-1",
+          0.1262
+        ],
+        [
+          "1-0",
+          0.1182
+        ],
+        [
+          "2-1",
+          0.0902
+        ],
+        [
+          "0-1",
+          0.0882
+        ],
+        [
+          "2-0",
+          0.0845
+        ]
+      ]
+    },
+    {
+      "match_id": "B1",
+      "group": "B",
+      "team_a": "Canada",
+      "team_b": "Bosnia and Herzegovina",
+      "p_win": 0.5308469159356826,
+      "p_draw": 0.2524747497134607,
+      "p_loss": 0.2166783343508567,
+      "expected_goals_a": 1.517290917159228,
+      "expected_goals_b": 1.0058246872017649,
+      "top_scorelines": [
+        [
+          "1-1",
+          0.1231
+        ],
+        [
+          "1-0",
+          0.1224
+        ],
+        [
+          "2-1",
+          0.0934
+        ],
+        [
+          "2-0",
+          0.0928
+        ],
+        [
+          "0-1",
+          0.0811
+        ]
+      ]
+    },
+    {
+      "match_id": "B2",
+      "group": "B",
+      "team_a": "Canada",
+      "team_b": "Qatar",
+      "p_win": 0.5122999992281199,
+      "p_draw": 0.25850000207126134,
+      "p_loss": 0.22919999870061877,
+      "expected_goals_a": 1.5470980125461427,
+      "expected_goals_b": 1.0444563078073206,
+      "top_scorelines": [
+        [
+          "1-1",
+          0.1218
+        ],
+        [
+          "1-0",
+          0.1166
+        ],
+        [
+          "2-1",
+          0.0942
+        ],
+        [
+          "2-0",
+          0.0902
+        ],
+        [
+          "0-1",
+          0.0787
+        ]
+      ]
+    },
+    {
+      "match_id": "B3",
+      "group": "B",
+      "team_a": "Canada",
+      "team_b": "Switzerland",
+      "p_win": 0.2947000011011958,
+      "p_draw": 0.2440000063776971,
+      "p_loss": 0.4612999925211071,
+      "expected_goals_a": 1.1950210254235119,
+      "expected_goals_b": 1.4872606087120768,
+      "top_scorelines": [
+        [
+          "1-1",
+          0.1223
+        ],
+        [
+          "0-1",
+          0.1023
+        ],
+        [
+          "1-2",
+          0.0909
+        ],
+        [
+          "1-0",
+          0.0822
+        ],
+        [
+          "0-2",
+          0.0761
+        ]
+      ]
+    },
+    {
+      "match_id": "B4",
+      "group": "B",
+      "team_a": "Bosnia and Herzegovina",
+      "team_b": "Qatar",
+      "p_win": 0.36356363427659877,
+      "p_draw": 0.25467454096421793,
+      "p_loss": 0.3817618247591833,
+      "expected_goals_a": 1.3584110575216715,
+      "expected_goals_b": 1.2682894756925653,
+      "top_scorelines": [
+        [
+          "1-1",
+          0.1252
+        ],
+        [
+          "1-0",
+          0.0987
+        ],
+        [
+          "0-1",
+          0.0922
+        ],
+        [
+          "2-1",
+          0.085
+        ],
+        [
+          "1-2",
+          0.0794
+        ]
+      ]
+    },
+    {
+      "match_id": "B5",
+      "group": "B",
+      "team_a": "Bosnia and Herzegovina",
+      "team_b": "Switzerland",
+      "p_win": 0.17788221023388073,
+      "p_draw": 0.24337565098152478,
+      "p_loss": 0.5787421387845945,
+      "expected_goals_a": 1.0315239444055968,
+      "expected_goals_b": 1.7472728268572564,
+      "top_scorelines": [
+        [
+          "1-1",
+          0.1131
+        ],
+        [
+          "0-1",
+          0.1096
+        ],
+        [
+          "1-2",
+          0.0988
+        ],
+        [
+          "0-2",
+          0.0957
+        ],
+        [
+          "1-0",
+          0.0647
+        ]
+      ]
+    },
+    {
+      "match_id": "B6",
+      "group": "B",
+      "team_a": "Qatar",
+      "team_b": "Switzerland",
+      "p_win": 0.21697829776439073,
+      "p_draw": 0.23817617949598405,
+      "p_loss": 0.5448455227396253,
+      "expected_goals_a": 1.0314443135330362,
+      "expected_goals_b": 1.7470115273165532,
+      "top_scorelines": [
+        [
+          "1-1",
+          0.1131
+        ],
+        [
+          "0-1",
+          0.1096
+        ],
+        [
+          "1-2",
+          0.0988
+        ],
+        [
+          "0-2",
+          0.0958
+        ],
+        [
+          "1-0",
+          0.0647
+        ]
+      ]
+    },
+    {
+      "match_id": "C1",
+      "group": "C",
+      "team_a": "Brazil",
+      "team_b": "Morocco",
+      "p_win": 0.5217999971449374,
+      "p_draw": 0.27219999647736537,
+      "p_loss": 0.2060000063776972,
+      "expected_goals_a": 1.6499997225124874,
+      "expected_goals_b": 1.0267005368087352,
+      "top_scorelines": [
+        [
+          "1-1",
+          0.1174
+        ],
+        [
+          "1-0",
+          0.1144
+        ],
+        [
+          "2-1",
+          0.0969
+        ],
+        [
+          "2-0",
+          0.0944
+        ],
+        [
+          "0-1",
+          0.0712
+        ]
+      ]
+    },
+    {
+      "match_id": "C2",
+      "group": "C",
+      "team_a": "Brazil",
+      "team_b": "Haiti",
+      "p_win": 0.870000001527369,
+      "p_draw": 0.09359999711215497,
+      "p_loss": 0.03640000136047601,
+      "expected_goals_a": 2.563924081720813,
+      "expected_goals_b": 0.34266559889613035,
+      "top_scorelines": [
+        [
+          "2-0",
+          0.1884
+        ],
+        [
+          "3-0",
+          0.161
+        ],
+        [
+          "1-0",
+          0.147
+        ],
+        [
+          "4-0",
+          0.1032
+        ],
+        [
+          "2-1",
+          0.0646
+        ]
+      ]
+    },
+    {
+      "match_id": "C3",
+      "group": "C",
+      "team_a": "Brazil",
+      "team_b": "Scotland",
+      "p_win": 0.6998000092819332,
+      "p_draw": 0.20379999128133064,
+      "p_loss": 0.0963999994367361,
+      "expected_goals_a": 2.2044346286526584,
+      "expected_goals_b": 0.743139513173555,
+      "top_scorelines": [
+        [
+          "2-0",
+          0.1308
+        ],
+        [
+          "1-0",
+          0.1187
+        ],
+        [
+          "2-1",
+          0.0972
+        ],
+        [
+          "3-0",
+          0.0961
+        ],
+        [
+          "1-1",
+          0.0882
+        ]
+      ]
+    },
+    {
+      "match_id": "C4",
+      "group": "C",
+      "team_a": "Morocco",
+      "team_b": "Haiti",
+      "p_win": 0.7986999988168477,
+      "p_draw": 0.14150000040233138,
+      "p_loss": 0.05980000078082087,
+      "expected_goals_a": 2.3442290897372255,
+      "expected_goals_b": 0.5635493225854172,
+      "top_scorelines": [
+        [
+          "2-0",
+          0.155
+        ],
+        [
+          "1-0",
+          0.1323
+        ],
+        [
+          "3-0",
+          0.1212
+        ],
+        [
+          "2-1",
+          0.0874
+        ],
+        [
+          "1-1",
+          0.0745
+        ]
+      ]
+    },
+    {
+      "match_id": "C5",
+      "group": "C",
+      "team_a": "Morocco",
+      "team_b": "Scotland",
+      "p_win": 0.543499998100102,
+      "p_draw": 0.26239999737739567,
+      "p_loss": 0.19410000452250237,
+      "expected_goals_a": 1.7759128663555683,
+      "expected_goals_b": 0.9563983793857359,
+      "top_scorelines": [
+        [
+          "1-0",
+          0.1168
+        ],
+        [
+          "1-1",
+          0.1117
+        ],
+        [
+          "2-0",
+          0.1037
+        ],
+        [
+          "2-1",
+          0.0991
+        ],
+        [
+          "0-0",
+          0.0657
+        ]
+      ]
+    },
+    {
+      "match_id": "C6",
+      "group": "C",
+      "team_a": "Haiti",
+      "team_b": "Scotland",
+      "p_win": 0.17069999619275336,
+      "p_draw": 0.22679999132752432,
+      "p_loss": 0.6025000124797223,
+      "expected_goals_a": 0.9531877923369355,
+      "expected_goals_b": 1.8555117664122662,
+      "top_scorelines": [
+        [
+          "0-1",
+          0.1133
+        ],
+        [
+          "1-1",
+          0.108
+        ],
+        [
+          "0-2",
+          0.1051
+        ],
+        [
+          "1-2",
+          0.1002
+        ],
+        [
+          "0-3",
+          0.065
+        ]
+      ]
+    },
+    {
+      "match_id": "D1",
+      "group": "D",
+      "team_a": "USA",
+      "team_b": "Paraguay",
+      "p_win": 0.4797999858856201,
+      "p_draw": 0.2587999999523163,
+      "p_loss": 0.2614000141620636,
+      "expected_goals_a": 1.7572455509591438,
+      "expected_goals_b": 0.9926357056736317,
+      "top_scorelines": [
+        [
+          "1-0",
+          0.1135
+        ],
+        [
+          "1-1",
+          0.1126
+        ],
+        [
+          "2-0",
+          0.0997
+        ],
+        [
+          "2-1",
+          0.099
+        ],
+        [
+          "0-0",
+          0.0646
+        ]
+      ]
+    },
+    {
+      "match_id": "D2",
+      "group": "D",
+      "team_a": "USA",
+      "team_b": "Australia",
+      "p_win": 0.47570000516474265,
+      "p_draw": 0.2538999990791082,
+      "p_loss": 0.27039999575614915,
+      "expected_goals_a": 1.6233078412856428,
+      "expected_goals_b": 1.067984874113231,
+      "top_scorelines": [
+        [
+          "1-1",
+          0.1184
+        ],
+        [
+          "1-0",
+          0.1109
+        ],
+        [
+          "2-1",
+          0.0961
+        ],
+        [
+          "2-0",
+          0.09
+        ],
+        [
+          "0-1",
+          0.0729
+        ]
+      ]
+    },
+    {
+      "match_id": "D3",
+      "group": "D",
+      "team_a": "USA",
+      "team_b": "T\u00fcrkiye",
+      "p_win": 0.4558999998599291,
+      "p_draw": 0.25330000360906113,
+      "p_loss": 0.2907999965310098,
+      "expected_goals_a": 1.5275138055330355,
+      "expected_goals_b": 1.123717029982025,
+      "top_scorelines": [
+        [
+          "1-1",
+          0.1218
+        ],
+        [
+          "1-0",
+          0.1084
+        ],
+        [
+          "2-1",
+          0.0931
+        ],
+        [
+          "2-0",
+          0.0828
+        ],
+        [
+          "0-1",
+          0.0798
+        ]
+      ]
+    },
+    {
+      "match_id": "D4",
+      "group": "D",
+      "team_a": "Paraguay",
+      "team_b": "Australia",
+      "p_win": 0.3650634839221226,
+      "p_draw": 0.2584741580702518,
+      "p_loss": 0.3764623580076255,
+      "expected_goals_a": 1.2398186581527784,
+      "expected_goals_b": 1.3675125104741155,
+      "top_scorelines": [
+        [
+          "1-1",
+          0.1256
+        ],
+        [
+          "0-1",
+          0.1013
+        ],
+        [
+          "1-0",
+          0.0918
+        ],
+        [
+          "1-2",
+          0.0859
+        ],
+        [
+          "2-1",
+          0.0779
+        ]
+      ]
+    },
+    {
+      "match_id": "D5",
+      "group": "D",
+      "team_a": "Paraguay",
+      "team_b": "T\u00fcrkiye",
+      "p_win": 0.3449000120162964,
+      "p_draw": 0.25529998540878296,
+      "p_loss": 0.39980000257492065,
+      "expected_goals_a": 1.1478935534137853,
+      "expected_goals_b": 1.3943865352919949,
+      "top_scorelines": [
+        [
+          "1-1",
+          0.1265
+        ],
+        [
+          "0-1",
+          0.1102
+        ],
+        [
+          "1-0",
+          0.0907
+        ],
+        [
+          "1-2",
+          0.0882
+        ],
+        [
+          "0-0",
+          0.079
+        ]
+      ]
+    },
+    {
+      "match_id": "D6",
+      "group": "D",
+      "team_a": "Australia",
+      "team_b": "T\u00fcrkiye",
+      "p_win": 0.38040000200271606,
+      "p_draw": 0.2556999921798706,
+      "p_loss": 0.36390000581741333,
+      "expected_goals_a": 1.2658858481302557,
+      "expected_goals_b": 1.3264140314795048,
+      "top_scorelines": [
+        [
+          "1-1",
+          0.1262
+        ],
+        [
+          "0-1",
+          0.0997
+        ],
+        [
+          "1-0",
+          0.0952
+        ],
+        [
+          "1-2",
+          0.0837
+        ],
+        [
+          "2-1",
+          0.0799
+        ]
+      ]
+    },
+    {
+      "match_id": "E1",
+      "group": "E",
+      "team_a": "Germany",
+      "team_b": "Cura\u00e7ao",
+      "p_win": 0.8653134706018167,
+      "p_draw": 0.09599040020158658,
+      "p_loss": 0.03869612919659663,
+      "expected_goals_a": 2.5008909929272676,
+      "expected_goals_b": 0.387236717825878,
+      "top_scorelines": [
+        [
+          "2-0",
+          0.1818
+        ],
+        [
+          "3-0",
+          0.1515
+        ],
+        [
+          "1-0",
+          0.1454
+        ],
+        [
+          "4-0",
+          0.0947
+        ],
+        [
+          "2-1",
+          0.0704
+        ]
+      ]
+    },
+    {
+      "match_id": "E2",
+      "group": "E",
+      "team_a": "Germany",
+      "team_b": "Ivory Coast",
+      "p_win": 0.5838999835237858,
+      "p_draw": 0.24600001046061531,
+      "p_loss": 0.17010000601559885,
+      "expected_goals_a": 1.78880323514983,
+      "expected_goals_b": 0.9431787440711178,
+      "top_scorelines": [
+        [
+          "1-0",
+          0.1177
+        ],
+        [
+          "1-1",
+          0.111
+        ],
+        [
+          "2-0",
+          0.1052
+        ],
+        [
+          "2-1",
+          0.0993
+        ],
+        [
+          "0-0",
+          0.0658
+        ]
+      ]
+    },
+    {
+      "match_id": "E3",
+      "group": "E",
+      "team_a": "Germany",
+      "team_b": "Ecuador",
+      "p_win": 0.5563999927580358,
+      "p_draw": 0.2585000059232115,
+      "p_loss": 0.18510000131875273,
+      "expected_goals_a": 1.7150942875572384,
+      "expected_goals_b": 0.9684122115368526,
+      "top_scorelines": [
+        [
+          "1-0",
+          0.1182
+        ],
+        [
+          "1-1",
+          0.1145
+        ],
+        [
+          "2-0",
+          0.1014
+        ],
+        [
+          "2-1",
+          0.0982
+        ],
+        [
+          "0-0",
+          0.0689
+        ]
+      ]
+    },
+    {
+      "match_id": "E4",
+      "group": "E",
+      "team_a": "Cura\u00e7ao",
+      "team_b": "Ivory Coast",
+      "p_win": 0.13079999387264252,
+      "p_draw": 0.18809999525547028,
+      "p_loss": 0.6811000108718872,
+      "expected_goals_a": 0.8140233414987011,
+      "expected_goals_b": 2.1924649278034396,
+      "top_scorelines": [
+        [
+          "0-2",
+          0.1219
+        ],
+        [
+          "0-1",
+          0.1112
+        ],
+        [
+          "1-2",
+          0.0992
+        ],
+        [
+          "1-1",
+          0.0905
+        ],
+        [
+          "0-3",
+          0.0891
+        ]
+      ]
+    },
+    {
+      "match_id": "E5",
+      "group": "E",
+      "team_a": "Cura\u00e7ao",
+      "team_b": "Ecuador",
+      "p_win": 0.1143999993801117,
+      "p_draw": 0.1800999939441681,
+      "p_loss": 0.7055000066757202,
+      "expected_goals_a": 0.782496521357424,
+      "expected_goals_b": 2.2623974648172496,
+      "top_scorelines": [
+        [
+          "0-2",
+          0.1254
+        ],
+        [
+          "0-1",
+          0.1108
+        ],
+        [
+          "1-2",
+          0.0981
+        ],
+        [
+          "0-3",
+          0.0945
+        ],
+        [
+          "1-1",
+          0.0867
+        ]
+      ]
+    },
+    {
+      "match_id": "E6",
+      "group": "E",
+      "team_a": "Ivory Coast",
+      "team_b": "Ecuador",
+      "p_win": 0.368199998614192,
+      "p_draw": 0.2437999957233668,
+      "p_loss": 0.3880000056624412,
+      "expected_goals_a": 1.2763738449508975,
+      "expected_goals_b": 1.3433231608752945,
+      "top_scorelines": [
+        [
+          "1-1",
+          0.1254
+        ],
+        [
+          "0-1",
+          0.0983
+        ],
+        [
+          "1-0",
+          0.0934
+        ],
+        [
+          "1-2",
+          0.0843
+        ],
+        [
+          "2-1",
+          0.0801
+        ]
+      ]
+    },
+    {
+      "match_id": "F1",
+      "group": "F",
+      "team_a": "Netherlands",
+      "team_b": "Japan",
+      "p_win": 0.5060999989509583,
+      "p_draw": 0.27320000529289246,
+      "p_loss": 0.2206999957561493,
+      "expected_goals_a": 1.5303713670024197,
+      "expected_goals_b": 1.1051541718593603,
+      "top_scorelines": [
+        [
+          "1-1",
+          0.122
+        ],
+        [
+          "1-0",
+          0.1103
+        ],
+        [
+          "2-1",
+          0.0933
+        ],
+        [
+          "2-0",
+          0.0844
+        ],
+        [
+          "0-1",
+          0.0797
+        ]
+      ]
+    },
+    {
+      "match_id": "F2",
+      "group": "F",
+      "team_a": "Netherlands",
+      "team_b": "Sweden",
+      "p_win": 0.5523999929428101,
+      "p_draw": 0.24860000610351562,
+      "p_loss": 0.19900000095367432,
+      "expected_goals_a": 1.6883254691106762,
+      "expected_goals_b": 1.002743429170712,
+      "top_scorelines": [
+        [
+          "1-1",
+          0.1158
+        ],
+        [
+          "1-0",
+          0.1154
+        ],
+        [
+          "2-1",
+          0.0977
+        ],
+        [
+          "2-0",
+          0.0975
+        ],
+        [
+          "0-1",
+          0.0686
+        ]
+      ]
+    },
+    {
+      "match_id": "F3",
+      "group": "F",
+      "team_a": "Netherlands",
+      "team_b": "Tunisia",
+      "p_win": 0.6968999997243285,
+      "p_draw": 0.20010000169128178,
+      "p_loss": 0.10299999858438971,
+      "expected_goals_a": 2.009408541428694,
+      "expected_goals_b": 0.7650648294009038,
+      "top_scorelines": [
+        [
+          "2-0",
+          0.1281
+        ],
+        [
+          "1-0",
+          0.1275
+        ],
+        [
+          "2-1",
+          0.098
+        ],
+        [
+          "1-1",
+          0.0976
+        ],
+        [
+          "3-0",
+          0.0858
+        ]
+      ]
+    },
+    {
+      "match_id": "F4",
+      "group": "F",
+      "team_a": "Japan",
+      "team_b": "Sweden",
+      "p_win": 0.4475999937176706,
+      "p_draw": 0.25170000637471657,
+      "p_loss": 0.3006999999076128,
+      "expected_goals_a": 1.4666492871409498,
+      "expected_goals_b": 1.1839868249071004,
+      "top_scorelines": [
+        [
+          "1-1",
+          0.1233
+        ],
+        [
+          "1-0",
+          0.1041
+        ],
+        [
+          "2-1",
+          0.0904
+        ],
+        [
+          "0-1",
+          0.0841
+        ],
+        [
+          "2-0",
+          0.0764
+        ]
+      ]
+    },
+    {
+      "match_id": "F5",
+      "group": "F",
+      "team_a": "Japan",
+      "team_b": "Tunisia",
+      "p_win": 0.546100012271106,
+      "p_draw": 0.27079999043345465,
+      "p_loss": 0.18309999729543927,
+      "expected_goals_a": 1.7711836175323772,
+      "expected_goals_b": 0.9291996034248007,
+      "top_scorelines": [
+        [
+          "1-0",
+          0.1202
+        ],
+        [
+          "1-1",
+          0.1117
+        ],
+        [
+          "2-0",
+          0.1064
+        ],
+        [
+          "2-1",
+          0.0989
+        ],
+        [
+          "0-0",
+          0.0679
+        ]
+      ]
+    },
+    {
+      "match_id": "F6",
+      "group": "F",
+      "team_a": "Sweden",
+      "team_b": "Tunisia",
+      "p_win": 0.5123999791204926,
+      "p_draw": 0.2698000113636257,
+      "p_loss": 0.2178000095158817,
+      "expected_goals_a": 1.602996389619471,
+      "expected_goals_b": 1.0275755442841141,
+      "top_scorelines": [
+        [
+          "1-1",
+          0.1195
+        ],
+        [
+          "1-0",
+          0.1163
+        ],
+        [
+          "2-1",
+          0.0958
+        ],
+        [
+          "2-0",
+          0.0932
+        ],
+        [
+          "0-1",
+          0.0745
+        ]
+      ]
+    },
+    {
+      "match_id": "G1",
+      "group": "G",
+      "team_a": "Belgium",
+      "team_b": "Egypt",
+      "p_win": 0.647599999961257,
+      "p_draw": 0.2289000021584332,
+      "p_loss": 0.1234999978803098,
+      "expected_goals_a": 1.9437716827522566,
+      "expected_goals_b": 0.8491806665939499,
+      "top_scorelines": [
+        [
+          "1-0",
+          0.1208
+        ],
+        [
+          "2-0",
+          0.1174
+        ],
+        [
+          "1-1",
+          0.1026
+        ],
+        [
+          "2-1",
+          0.0997
+        ],
+        [
+          "3-0",
+          0.0761
+        ]
+      ]
+    },
+    {
+      "match_id": "G2",
+      "group": "G",
+      "team_a": "Belgium",
+      "team_b": "Iran",
+      "p_win": 0.5649999976158142,
+      "p_draw": 0.25699999928474426,
+      "p_loss": 0.17800000309944153,
+      "expected_goals_a": 1.7355522807748909,
+      "expected_goals_b": 0.9040183888129768,
+      "top_scorelines": [
+        [
+          "1-0",
+          0.125
+        ],
+        [
+          "1-1",
+          0.113
+        ],
+        [
+          "2-0",
+          0.1085
+        ],
+        [
+          "2-1",
+          0.0981
+        ],
+        [
+          "0-0",
+          0.0721
+        ]
+      ]
+    },
+    {
+      "match_id": "G3",
+      "group": "G",
+      "team_a": "Belgium",
+      "team_b": "New Zealand",
+      "p_win": 0.846599999243766,
+      "p_draw": 0.10509999880604445,
+      "p_loss": 0.04830000195018948,
+      "expected_goals_a": 2.565032148800973,
+      "expected_goals_b": 0.5693634980840483,
+      "top_scorelines": [
+        [
+          "2-0",
+          0.1502
+        ],
+        [
+          "3-0",
+          0.1284
+        ],
+        [
+          "1-0",
+          0.1171
+        ],
+        [
+          "2-1",
+          0.0855
+        ],
+        [
+          "4-0",
+          0.0823
+        ]
+      ]
+    },
+    {
+      "match_id": "G4",
+      "group": "G",
+      "team_a": "Egypt",
+      "team_b": "Iran",
+      "p_win": 0.36559998989105225,
+      "p_draw": 0.26669999957084656,
+      "p_loss": 0.3677000105381012,
+      "expected_goals_a": 1.215985594860334,
+      "expected_goals_b": 1.3919630167516024,
+      "top_scorelines": [
+        [
+          "1-1",
+          0.1253
+        ],
+        [
+          "0-1",
+          0.1031
+        ],
+        [
+          "1-0",
+          0.09
+        ],
+        [
+          "1-2",
+          0.0872
+        ],
+        [
+          "2-1",
+          0.0762
+        ]
+      ]
+    },
+    {
+      "match_id": "G5",
+      "group": "G",
+      "team_a": "Egypt",
+      "team_b": "New Zealand",
+      "p_win": 0.6032999843850729,
+      "p_draw": 0.24140000703036796,
+      "p_loss": 0.15530000858455908,
+      "expected_goals_a": 1.8300765142596804,
+      "expected_goals_b": 0.908064798062639,
+      "top_scorelines": [
+        [
+          "1-0",
+          0.1198
+        ],
+        [
+          "2-0",
+          0.1096
+        ],
+        [
+          "1-1",
+          0.1088
+        ],
+        [
+          "2-1",
+          0.0995
+        ],
+        [
+          "3-0",
+          0.0669
+        ]
+      ]
+    },
+    {
+      "match_id": "G6",
+      "group": "G",
+      "team_a": "Iran",
+      "team_b": "New Zealand",
+      "p_win": 0.6883999910473821,
+      "p_draw": 0.19610000241100795,
+      "p_loss": 0.11550000654160995,
+      "expected_goals_a": 2.0454319338299243,
+      "expected_goals_b": 0.8334761125121323,
+      "top_scorelines": [
+        [
+          "2-0",
+          0.1198
+        ],
+        [
+          "1-0",
+          0.1171
+        ],
+        [
+          "2-1",
+          0.0998
+        ],
+        [
+          "1-1",
+          0.0976
+        ],
+        [
+          "3-0",
+          0.0817
+        ]
+      ]
+    },
+    {
+      "match_id": "H1",
+      "group": "H",
+      "team_a": "Spain",
+      "team_b": "Cape Verde",
+      "p_win": 0.867999993547797,
+      "p_draw": 0.09390000498779132,
+      "p_loss": 0.038100001464411656,
+      "expected_goals_a": 2.568753034535554,
+      "expected_goals_b": 0.3644734017952091,
+      "top_scorelines": [
+        [
+          "2-0",
+          0.1842
+        ],
+        [
+          "3-0",
+          0.1577
+        ],
+        [
+          "1-0",
+          0.1434
+        ],
+        [
+          "4-0",
+          0.1013
+        ],
+        [
+          "2-1",
+          0.0671
+        ]
+      ]
+    },
+    {
+      "match_id": "H2",
+      "group": "H",
+      "team_a": "Spain",
+      "team_b": "Saudi Arabia",
+      "p_win": 0.8394839494902939,
+      "p_draw": 0.10851084844111372,
+      "p_loss": 0.05200520206859236,
+      "expected_goals_a": 2.547152474910873,
+      "expected_goals_b": 0.5383274482749684,
+      "top_scorelines": [
+        [
+          "2-0",
+          0.1553
+        ],
+        [
+          "3-0",
+          0.1319
+        ],
+        [
+          "1-0",
+          0.1219
+        ],
+        [
+          "4-0",
+          0.084
+        ],
+        [
+          "2-1",
+          0.0836
+        ]
+      ]
+    },
+    {
+      "match_id": "H3",
+      "group": "H",
+      "team_a": "Spain",
+      "team_b": "Uruguay",
+      "p_win": 0.5120000090599057,
+      "p_draw": 0.2670999983817339,
+      "p_loss": 0.22089999255836032,
+      "expected_goals_a": 1.652700384654741,
+      "expected_goals_b": 1.0271518657156393,
+      "top_scorelines": [
+        [
+          "1-1",
+          0.1173
+        ],
+        [
+          "1-0",
+          0.1142
+        ],
+        [
+          "2-1",
+          0.0969
+        ],
+        [
+          "2-0",
+          0.0944
+        ],
+        [
+          "0-1",
+          0.071
+        ]
+      ]
+    },
+    {
+      "match_id": "H4",
+      "group": "H",
+      "team_a": "Cape Verde",
+      "team_b": "Saudi Arabia",
+      "p_win": 0.30389999890476466,
+      "p_draw": 0.24469999604374176,
+      "p_loss": 0.4514000050514936,
+      "expected_goals_a": 1.1835695773056385,
+      "expected_goals_b": 1.4580830964517921,
+      "top_scorelines": [
+        [
+          "1-1",
+          0.1236
+        ],
+        [
+          "0-1",
+          0.1044
+        ],
+        [
+          "1-2",
+          0.0901
+        ],
+        [
+          "1-0",
+          0.0848
+        ],
+        [
+          "0-2",
+          0.0761
+        ]
+      ]
+    },
+    {
+      "match_id": "H5",
+      "group": "H",
+      "team_a": "Cape Verde",
+      "team_b": "Uruguay",
+      "p_win": 0.08829116722689802,
+      "p_draw": 0.18078192594802378,
+      "p_loss": 0.7309269068250782,
+      "expected_goals_a": 0.7231415467686613,
+      "expected_goals_b": 2.4762174866935083,
+      "top_scorelines": [
+        [
+          "0-2",
+          0.1303
+        ],
+        [
+          "0-3",
+          0.1076
+        ],
+        [
+          "0-1",
+          0.1053
+        ],
+        [
+          "1-2",
+          0.0943
+        ],
+        [
+          "1-3",
+          0.0778
+        ]
+      ]
+    },
+    {
+      "match_id": "H6",
+      "group": "H",
+      "team_a": "Saudi Arabia",
+      "team_b": "Uruguay",
+      "p_win": 0.12989999547451728,
+      "p_draw": 0.1994999974891543,
+      "p_loss": 0.6706000070363284,
+      "expected_goals_a": 0.8301911039131419,
+      "expected_goals_b": 2.155024603591148,
+      "top_scorelines": [
+        [
+          "0-2",
+          0.1201
+        ],
+        [
+          "0-1",
+          0.1115
+        ],
+        [
+          "1-2",
+          0.0997
+        ],
+        [
+          "1-1",
+          0.0925
+        ],
+        [
+          "0-3",
+          0.0863
+        ]
+      ]
+    },
+    {
+      "match_id": "I1",
+      "group": "I",
+      "team_a": "France",
+      "team_b": "Senegal",
+      "p_win": 0.6786000031441449,
+      "p_draw": 0.215900000692904,
+      "p_loss": 0.10549999616295105,
+      "expected_goals_a": 2.115017467036006,
+      "expected_goals_b": 0.783051003813806,
+      "top_scorelines": [
+        [
+          "2-0",
+          0.126
+        ],
+        [
+          "1-0",
+          0.1191
+        ],
+        [
+          "2-1",
+          0.0987
+        ],
+        [
+          "1-1",
+          0.0933
+        ],
+        [
+          "3-0",
+          0.0888
+        ]
+      ]
+    },
+    {
+      "match_id": "I2",
+      "group": "I",
+      "team_a": "France",
+      "team_b": "Iraq",
+      "p_win": 0.8600860115459185,
+      "p_draw": 0.09900989914571148,
+      "p_loss": 0.04090408930837004,
+      "expected_goals_a": 2.477814253099337,
+      "expected_goals_b": 0.409016431626038,
+      "top_scorelines": [
+        [
+          "2-0",
+          0.1784
+        ],
+        [
+          "3-0",
+          0.1473
+        ],
+        [
+          "1-0",
+          0.144
+        ],
+        [
+          "4-0",
+          0.0913
+        ],
+        [
+          "2-1",
+          0.073
+        ]
+      ]
+    },
+    {
+      "match_id": "I3",
+      "group": "I",
+      "team_a": "France",
+      "team_b": "Norway",
+      "p_win": 0.6912308661118719,
+      "p_draw": 0.20717929200143093,
+      "p_loss": 0.10158984188669713,
+      "expected_goals_a": 2.1631371568960964,
+      "expected_goals_b": 0.7781449419403185,
+      "top_scorelines": [
+        [
+          "2-0",
+          0.1265
+        ],
+        [
+          "1-0",
+          0.1169
+        ],
+        [
+          "2-1",
+          0.0984
+        ],
+        [
+          "3-0",
+          0.0912
+        ],
+        [
+          "1-1",
+          0.091
+        ]
+      ]
+    },
+    {
+      "match_id": "I4",
+      "group": "I",
+      "team_a": "Senegal",
+      "team_b": "Iraq",
+      "p_win": 0.5989000022739172,
+      "p_draw": 0.24319999685287486,
+      "p_loss": 0.15790000087320802,
+      "expected_goals_a": 1.752497924046142,
+      "expected_goals_b": 0.8511684211012726,
+      "top_scorelines": [
+        [
+          "1-0",
+          0.1309
+        ],
+        [
+          "2-0",
+          0.1147
+        ],
+        [
+          "1-1",
+          0.1114
+        ],
+        [
+          "2-1",
+          0.0976
+        ],
+        [
+          "0-0",
+          0.0747
+        ]
+      ]
+    },
+    {
+      "match_id": "I5",
+      "group": "I",
+      "team_a": "Senegal",
+      "team_b": "Norway",
+      "p_win": 0.42239999771118164,
+      "p_draw": 0.25760000944137573,
+      "p_loss": 0.3199999928474426,
+      "expected_goals_a": 1.3590919616312298,
+      "expected_goals_b": 1.2873979439554477,
+      "top_scorelines": [
+        [
+          "1-1",
+          0.1247
+        ],
+        [
+          "1-0",
+          0.0968
+        ],
+        [
+          "0-1",
+          0.0917
+        ],
+        [
+          "2-1",
+          0.0847
+        ],
+        [
+          "1-2",
+          0.0802
+        ]
+      ]
+    },
+    {
+      "match_id": "I6",
+      "group": "I",
+      "team_a": "Iraq",
+      "team_b": "Norway",
+      "p_win": 0.19079999909996986,
+      "p_draw": 0.2464000023365021,
+      "p_loss": 0.562799998563528,
+      "expected_goals_a": 1.0113721604896206,
+      "expected_goals_b": 1.7725706266081498,
+      "top_scorelines": [
+        [
+          "1-1",
+          0.1119
+        ],
+        [
+          "0-1",
+          0.1107
+        ],
+        [
+          "1-2",
+          0.0992
+        ],
+        [
+          "0-2",
+          0.0981
+        ],
+        [
+          "1-0",
+          0.0631
+        ]
+      ]
+    },
+    {
+      "match_id": "J1",
+      "group": "J",
+      "team_a": "Argentina",
+      "team_b": "Algeria",
+      "p_win": 0.8208000033318996,
+      "p_draw": 0.12129999652020634,
+      "p_loss": 0.057900000147894023,
+      "expected_goals_a": 2.6453155030454365,
+      "expected_goals_b": 0.6234210873873136,
+      "top_scorelines": [
+        [
+          "2-0",
+          0.1405
+        ],
+        [
+          "3-0",
+          0.1239
+        ],
+        [
+          "1-0",
+          0.1062
+        ],
+        [
+          "2-1",
+          0.0876
+        ],
+        [
+          "4-0",
+          0.0819
+        ]
+      ]
+    },
+    {
+      "match_id": "J2",
+      "group": "J",
+      "team_a": "Argentina",
+      "team_b": "Austria",
+      "p_win": 0.7422999905563888,
+      "p_draw": 0.17120001102685953,
+      "p_loss": 0.08649999841675159,
+      "expected_goals_a": 2.4011686588967978,
+      "expected_goals_b": 0.7080054593051822,
+      "top_scorelines": [
+        [
+          "2-0",
+          0.1335
+        ],
+        [
+          "1-0",
+          0.1112
+        ],
+        [
+          "3-0",
+          0.1068
+        ],
+        [
+          "2-1",
+          0.0945
+        ],
+        [
+          "1-1",
+          0.0787
+        ]
+      ]
+    },
+    {
+      "match_id": "J3",
+      "group": "J",
+      "team_a": "Argentina",
+      "team_b": "Jordan",
+      "p_win": 0.8769999971203505,
+      "p_draw": 0.08810000351332137,
+      "p_loss": 0.0348999993663281,
+      "expected_goals_a": 2.7602443637240777,
+      "expected_goals_b": 0.3506978627949198,
+      "top_scorelines": [
+        [
+          "2-0",
+          0.1809
+        ],
+        [
+          "3-0",
+          0.1665
+        ],
+        [
+          "1-0",
+          0.1311
+        ],
+        [
+          "4-0",
+          0.1149
+        ],
+        [
+          "2-1",
+          0.0634
+        ]
+      ]
+    },
+    {
+      "match_id": "J4",
+      "group": "J",
+      "team_a": "Algeria",
+      "team_b": "Austria",
+      "p_win": 0.3375999927520752,
+      "p_draw": 0.23960000276565552,
+      "p_loss": 0.4228000044822693,
+      "expected_goals_a": 1.213833970196751,
+      "expected_goals_b": 1.4610924496165898,
+      "top_scorelines": [
+        [
+          "1-1",
+          0.1229
+        ],
+        [
+          "0-1",
+          0.1012
+        ],
+        [
+          "1-2",
+          0.0898
+        ],
+        [
+          "1-0",
+          0.0841
+        ],
+        [
+          "2-1",
+          0.0746
+        ]
+      ]
+    },
+    {
+      "match_id": "J5",
+      "group": "J",
+      "team_a": "Algeria",
+      "team_b": "Jordan",
+      "p_win": 0.5563556292501618,
+      "p_draw": 0.24462446450301623,
+      "p_loss": 0.199019906246822,
+      "expected_goals_a": 1.5968483709336259,
+      "expected_goals_b": 0.939850796573107,
+      "top_scorelines": [
+        [
+          "1-0",
+          0.1272
+        ],
+        [
+          "1-1",
+          0.1195
+        ],
+        [
+          "2-0",
+          0.1015
+        ],
+        [
+          "2-1",
+          0.0954
+        ],
+        [
+          "0-0",
+          0.0796
+        ]
+      ]
+    },
+    {
+      "match_id": "J6",
+      "group": "J",
+      "team_a": "Austria",
+      "team_b": "Jordan",
+      "p_win": 0.595700007805228,
+      "p_draw": 0.24409999715983877,
+      "p_loss": 0.16019999503493323,
+      "expected_goals_a": 1.7141379358015447,
+      "expected_goals_b": 0.8335318071848983,
+      "top_scorelines": [
+        [
+          "1-0",
+          0.1353
+        ],
+        [
+          "2-0",
+          0.116
+        ],
+        [
+          "1-1",
+          0.1128
+        ],
+        [
+          "2-1",
+          0.0967
+        ],
+        [
+          "0-0",
+          0.0789
+        ]
+      ]
+    },
+    {
+      "match_id": "K1",
+      "group": "K",
+      "team_a": "Portugal",
+      "team_b": "DR Congo",
+      "p_win": 0.7279728104706384,
+      "p_draw": 0.18981897220602656,
+      "p_loss": 0.08220821732333497,
+      "expected_goals_a": 1.8496091812651434,
+      "expected_goals_b": 0.4901301632975107,
+      "top_scorelines": [
+        [
+          "1-0",
+          0.1803
+        ],
+        [
+          "2-0",
+          0.1668
+        ],
+        [
+          "3-0",
+          0.1028
+        ],
+        [
+          "0-0",
+          0.0975
+        ],
+        [
+          "1-1",
+          0.0884
+        ]
+      ]
+    },
+    {
+      "match_id": "K2",
+      "group": "K",
+      "team_a": "Portugal",
+      "team_b": "Uzbekistan",
+      "p_win": 0.7512000091195106,
+      "p_draw": 0.1678999935403467,
+      "p_loss": 0.08089999734014276,
+      "expected_goals_a": 2.184505182057983,
+      "expected_goals_b": 0.6401728649908828,
+      "top_scorelines": [
+        [
+          "2-0",
+          0.1451
+        ],
+        [
+          "1-0",
+          0.1328
+        ],
+        [
+          "3-0",
+          0.1056
+        ],
+        [
+          "2-1",
+          0.0929
+        ],
+        [
+          "1-1",
+          0.085
+        ]
+      ]
+    },
+    {
+      "match_id": "K3",
+      "group": "K",
+      "team_a": "Portugal",
+      "team_b": "Colombia",
+      "p_win": 0.47850000858306885,
+      "p_draw": 0.26499998569488525,
+      "p_loss": 0.2565000057220459,
+      "expected_goals_a": 1.4896930367414427,
+      "expected_goals_b": 1.1177953950775052,
+      "top_scorelines": [
+        [
+          "1-1",
+          0.1234
+        ],
+        [
+          "1-0",
+          0.1104
+        ],
+        [
+          "2-1",
+          0.0919
+        ],
+        [
+          "0-1",
+          0.0828
+        ],
+        [
+          "2-0",
+          0.0822
+        ]
+      ]
+    },
+    {
+      "match_id": "K4",
+      "group": "K",
+      "team_a": "DR Congo",
+      "team_b": "Uzbekistan",
+      "p_win": 0.3921000004991889,
+      "p_draw": 0.24919999764561657,
+      "p_loss": 0.3587000018551945,
+      "expected_goals_a": 1.38612669614453,
+      "expected_goals_b": 1.2479135889097024,
+      "top_scorelines": [
+        [
+          "1-1",
+          0.1248
+        ],
+        [
+          "1-0",
+          0.1
+        ],
+        [
+          "0-1",
+          0.09
+        ],
+        [
+          "2-1",
+          0.0865
+        ],
+        [
+          "1-2",
+          0.0779
+        ]
+      ]
+    },
+    {
+      "match_id": "K5",
+      "group": "K",
+      "team_a": "DR Congo",
+      "team_b": "Colombia",
+      "p_win": 0.14450000441819436,
+      "p_draw": 0.20440000600218783,
+      "p_loss": 0.6510999895796178,
+      "expected_goals_a": 0.8984324642986387,
+      "expected_goals_b": 1.9747446120355985,
+      "top_scorelines": [
+        [
+          "0-1",
+          0.1134
+        ],
+        [
+          "0-2",
+          0.112
+        ],
+        [
+          "1-1",
+          0.1019
+        ],
+        [
+          "1-2",
+          0.1006
+        ],
+        [
+          "0-3",
+          0.0737
+        ]
+      ]
+    },
+    {
+      "match_id": "K6",
+      "group": "K",
+      "team_a": "Uzbekistan",
+      "team_b": "Colombia",
+      "p_win": 0.14960000364780437,
+      "p_draw": 0.19499999865889545,
+      "p_loss": 0.6553999976933002,
+      "expected_goals_a": 0.8790456272686875,
+      "expected_goals_b": 2.013525986543663,
+      "top_scorelines": [
+        [
+          "0-2",
+          0.1144
+        ],
+        [
+          "0-1",
+          0.1136
+        ],
+        [
+          "1-2",
+          0.1005
+        ],
+        [
+          "1-1",
+          0.0998
+        ],
+        [
+          "0-3",
+          0.0768
+        ]
+      ]
+    },
+    {
+      "match_id": "L1",
+      "group": "L",
+      "team_a": "England",
+      "team_b": "Croatia",
+      "p_win": 0.515451538492364,
+      "p_draw": 0.2732273284882528,
+      "p_loss": 0.21132113301938316,
+      "expected_goals_a": 1.6409539129899702,
+      "expected_goals_b": 1.020491127451068,
+      "top_scorelines": [
+        [
+          "1-1",
+          0.1178
+        ],
+        [
+          "1-0",
+          0.1155
+        ],
+        [
+          "2-1",
+          0.0967
+        ],
+        [
+          "2-0",
+          0.0947
+        ],
+        [
+          "0-1",
+          0.0718
+        ]
+      ]
+    },
+    {
+      "match_id": "L2",
+      "group": "L",
+      "team_a": "England",
+      "team_b": "Ghana",
+      "p_win": 0.7683768415625714,
+      "p_draw": 0.16271627053990556,
+      "p_loss": 0.06890688789752311,
+      "expected_goals_a": 2.424406995458056,
+      "expected_goals_b": 0.6751429538238731,
+      "top_scorelines": [
+        [
+          "2-0",
+          0.1376
+        ],
+        [
+          "1-0",
+          0.1135
+        ],
+        [
+          "3-0",
+          0.1112
+        ],
+        [
+          "2-1",
+          0.0929
+        ],
+        [
+          "1-1",
+          0.0766
+        ]
+      ]
+    },
+    {
+      "match_id": "L3",
+      "group": "L",
+      "team_a": "England",
+      "team_b": "Panama",
+      "p_win": 0.8274999949429184,
+      "p_draw": 0.11860000474676495,
+      "p_loss": 0.053900000310316686,
+      "expected_goals_a": 2.3930245698884525,
+      "expected_goals_b": 0.5092361592754198,
+      "top_scorelines": [
+        [
+          "2-0",
+          0.1629
+        ],
+        [
+          "1-0",
+          0.1362
+        ],
+        [
+          "3-0",
+          0.13
+        ],
+        [
+          "2-1",
+          0.083
+        ],
+        [
+          "4-0",
+          0.0778
+        ]
+      ]
+    },
+    {
+      "match_id": "L4",
+      "group": "L",
+      "team_a": "Croatia",
+      "team_b": "Ghana",
+      "p_win": 0.6708999922193586,
+      "p_draw": 0.20610000346675517,
+      "p_loss": 0.12300000431388619,
+      "expected_goals_a": 1.9659950541593836,
+      "expected_goals_b": 0.8704154417962339,
+      "top_scorelines": [
+        [
+          "1-0",
+          0.1171
+        ],
+        [
+          "2-0",
+          0.1151
+        ],
+        [
+          "1-1",
+          0.1019
+        ],
+        [
+          "2-1",
+          0.1002
+        ],
+        [
+          "3-0",
+          0.0754
+        ]
+      ]
+    },
+    {
+      "match_id": "L5",
+      "group": "L",
+      "team_a": "Croatia",
+      "team_b": "Panama",
+      "p_win": 0.7125287439802813,
+      "p_draw": 0.18948105703840767,
+      "p_loss": 0.09799019898131096,
+      "expected_goals_a": 2.0711678627116195,
+      "expected_goals_b": 0.7448315004177218,
+      "top_scorelines": [
+        [
+          "2-0",
+          0.1309
+        ],
+        [
+          "1-0",
+          0.1264
+        ],
+        [
+          "2-1",
+          0.0975
+        ],
+        [
+          "1-1",
+          0.0941
+        ],
+        [
+          "3-0",
+          0.0904
+        ]
+      ]
+    },
+    {
+      "match_id": "L6",
+      "group": "L",
+      "team_a": "Ghana",
+      "team_b": "Panama",
+      "p_win": 0.44675532388354455,
+      "p_draw": 0.2693730668235066,
+      "p_loss": 0.2838716092929489,
+      "expected_goals_a": 1.4195306868497386,
+      "expected_goals_b": 1.1315890572605287,
+      "top_scorelines": [
+        [
+          "1-1",
+          0.1259
+        ],
+        [
+          "1-0",
+          0.1112
+        ],
+        [
+          "2-1",
+          0.0893
+        ],
+        [
+          "0-1",
+          0.0887
+        ],
+        [
+          "2-0",
+          0.0789
+        ]
+      ]
+    }
+  ],
+  "selected_features": [
+    "age_diff",
+    "attack_dominance",
+    "attack_vs_defence",
+    "coach_wc_experience_diff",
+    "confederation_tier_a",
+    "confederation_tier_b",
+    "confederation_tier_diff",
+    "defence_vs_attack",
+    "elo_diff",
+    "form10_ppg_diff",
+    "form_x_elo",
+    "is_wc_debut_a",
+    "is_wc_debut_b",
+    "neutral_venue",
+    "pressure_experience",
+    "qualifying_ppg_diff",
+    "rank_diff",
+    "squad_value_ratio",
+    "stage",
+    "top5_pct_diff",
+    "tournament_weight",
+    "wc_deepest_last3_diff_wtd",
+    "wc_finals_diff_wtd",
+    "wc_knockout_wr_diff_wtd",
+    "wc_penalty_wr_diff_wtd",
+    "wc_titles_diff_wtd"
+  ]
+}
