@@ -2,6 +2,9 @@
 
 An end-to-end Machine Learning prediction engine and high-fidelity Monte Carlo tournament simulator for the **FIFA World Cup 2026** (based on the confirmed 48-team, 12 groups of 4 format).
 
+### 🌐 Live Production Deployment
+* **Interactive Bracket Dashboard:** [https://wc26predict.netlify.app/](https://wc26predict.netlify.app/)
+
 ---
 
 ## 🏗️ System Architecture
